@@ -1,0 +1,58 @@
+{
+  "stage": "B",
+  "processed_coms": [
+    {
+      "com": "com/arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-architectural_context-p2.json",
+      "canvas": "architectural_context",
+      "post_its": 59
+    },
+    {
+      "com": "com/arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-business_context-p1.json",
+      "canvas": "business_context",
+      "post_its": 51
+    },
+    {
+      "com": "com/arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-deployment-p8.json",
+      "canvas": "deployment",
+      "post_its": 22
+    },
+    {
+      "com": "com/arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-functional-p5.json",
+      "canvas": "functional",
+      "post_its": 65
+    },
+    {
+      "com": "com/arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-functional-p6.json",
+      "canvas": "functional",
+      "post_its": 52
+    },
+    {
+      "com": "com/arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-functional-p7.json",
+      "canvas": "functional",
+      "post_its": 53
+    },
+    {
+      "com": "com/arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-structural-p4.json",
+      "canvas": "structural",
+      "post_its": 30
+    },
+    {
+      "com": "com/arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-system_context-p3.json",
+      "canvas": "system_context",
+      "post_its": 31
+    }
+  ],
+  "generated_files": [
+    "architectural-context-p2.md",
+    "business-context-p1.md",
+    "deployment-p8.md",
+    "functional-ac-p5.md",
+    "functional-ba-p6.md",
+    "functional-bw-p7.md",
+    "functional-summary.md",
+    "structural-p4.md",
+    "system-context-p3.md"
+  ],
+  "compose_executed": false,
+  "audit_executed": false
+}

@@ -1,0 +1,813 @@
+{
+  "source": "Arquitectura para Sistema de Reservas con Agente Inteligente LLM.pdf#p5",
+  "canvas": "functional",
+  "template": "7Cs v1.1 June 2026",
+  "header": {
+    "system": "ConfIA – Agente Inteligente Conversacional para Gestión de Reservas",
+    "organization": null,
+    "canvas_name": null,
+    "version": null,
+    "date": null
+  },
+  "sections": [
+    {
+      "name": "Bundles & components",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5BC-01",
+          "text": "Agente\nconversacional",
+          "bbox": [
+            29,
+            272,
+            167,
+            347
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "User inputs",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5UI-01",
+          "text": "Mensaje\nWhatsApp",
+          "bbox": [
+            227,
+            156,
+            327,
+            211
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5UI-02",
+          "text": "Audio\nWhatsApp",
+          "bbox": [
+            361,
+            156,
+            461,
+            211
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5UI-03",
+          "text": "Imagen\nWhatsApp",
+          "bbox": [
+            495,
+            156,
+            595,
+            211
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5UI-04",
+          "text": "Ubicación\nWhatsApp",
+          "bbox": [
+            289,
+            224,
+            389,
+            278
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5UI-05",
+          "text": "Documento\nWhatsApp",
+          "bbox": [
+            443,
+            224,
+            543,
+            278
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "UI-processing inputs",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5UIPIN-01",
+          "text": "Confirmar\nCita",
+          "bbox": [
+            227,
+            330,
+            327,
+            384
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5UIPIN-02",
+          "text": "Cancelar\nCita",
+          "bbox": [
+            344,
+            330,
+            444,
+            384
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5UIPIN-03",
+          "text": "Entregar\ndisponibilidad\nhoraria",
+          "bbox": [
+            464,
+            330,
+            564,
+            384
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "API inputs",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5APIIN-01",
+          "text": "Webhook:\nmensaje de\nWhatsApp",
+          "bbox": [
+            212,
+            474,
+            317,
+            531
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5APIIN-02",
+          "text": "Webhook:\nestado de\nmensaje",
+          "bbox": [
+            331,
+            472,
+            443,
+            533
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Constraints",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5C-01",
+          "text": "Mantener\ncontexto\nconversacional",
+          "bbox": [
+            48,
+            743,
+            148,
+            797
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5C-02",
+          "text": "Ejecutar acciones\núnicamente\nautorizadas por las\nreglas de negocio",
+          "bbox": [
+            48,
+            813,
+            148,
+            867
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5C-03",
+          "text": "Trazabilidad de\nlas\nconversaciones",
+          "bbox": [
+            48,
+            883,
+            148,
+            937
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5C-04",
+          "text": "Baja latencia en\nlas respuestas",
+          "bbox": [
+            48,
+            953,
+            148,
+            1007
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5C-05",
+          "text": "Permitir\nderivación a\natención humana",
+          "bbox": [
+            39,
+            1021,
+            157,
+            1086
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Data imports",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5DI-01",
+          "text": "Ficha del\ncliente",
+          "bbox": [
+            289,
+            651,
+            389,
+            705
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5DI-02",
+          "text": "Configuración\nconversacional",
+          "bbox": [
+            403,
+            642,
+            502,
+            696
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5DI-03",
+          "text": "Historial de\nConversación",
+          "bbox": [
+            525,
+            647,
+            625,
+            701
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5DI-04",
+          "text": "Catalogo\nde servicios",
+          "bbox": [
+            289,
+            709,
+            389,
+            763
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5DI-05",
+          "text": "Disponibilidad\nde Agenda",
+          "bbox": [
+            403,
+            709,
+            502,
+            763
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5DI-06",
+          "text": "Reglas de\nnegocio",
+          "bbox": [
+            525,
+            715,
+            625,
+            769
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Event handlers",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5EH-01",
+          "text": "Mensaje\nrecibido",
+          "bbox": [
+            238,
+            810,
+            338,
+            864
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5EH-02",
+          "text": "Multimedia\nrecibida",
+          "bbox": [
+            372,
+            810,
+            471,
+            864
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5EH-03",
+          "text": "Recordatorio\nde cita",
+          "bbox": [
+            495,
+            810,
+            595,
+            864
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5EH-04",
+          "text": "Error de\ninterpretacion\n(derivar)",
+          "bbox": [
+            238,
+            878,
+            338,
+            932
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5EH-05",
+          "text": "Hora\nliberada",
+          "bbox": [
+            372,
+            878,
+            471,
+            932
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5EH-06",
+          "text": "Conversación\nreanudada",
+          "bbox": [
+            495,
+            878,
+            595,
+            932
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Helpers",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5H-01",
+          "text": "Constructor\nde Prompt",
+          "bbox": [
+            344,
+            970,
+            444,
+            1024
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5H-02",
+          "text": "Gestor de\nContexto",
+          "bbox": [
+            478,
+            970,
+            578,
+            1024
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5H-03",
+          "text": "Depurar\nhistorial\nconversacional",
+          "bbox": [
+            612,
+            970,
+            712,
+            1024
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5H-04",
+          "text": "Recomendación\nde servicios",
+          "bbox": [
+            314,
+            1037,
+            413,
+            1091
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5H-05",
+          "text": "Moderación\nde Contenido",
+          "bbox": [
+            433,
+            1037,
+            533,
+            1091
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5H-06",
+          "text": "Clasificador\nde intención",
+          "bbox": [
+            564,
+            1037,
+            663,
+            1091
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5H-07",
+          "text": "Detección\nde intención",
+          "bbox": [
+            705,
+            1037,
+            805,
+            1091
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Data objects",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5DO-01",
+          "text": "Conversación",
+          "bbox": [
+            790,
+            251,
+            911,
+            318
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5DO-02",
+          "text": "Mensaje",
+          "bbox": [
+            953,
+            251,
+            1074,
+            318
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5DO-03",
+          "text": "Contexto",
+          "bbox": [
+            790,
+            401,
+            911,
+            467
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5DO-04",
+          "text": "Intención",
+          "bbox": [
+            967,
+            401,
+            1088,
+            467
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5DO-05",
+          "text": "Prompt",
+          "bbox": [
+            790,
+            509,
+            911,
+            576
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5DO-06",
+          "text": "Estado\nConversacional",
+          "bbox": [
+            967,
+            509,
+            1088,
+            576
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "User visualizations, reports & notifications",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5UVRN-01",
+          "text": "Respuesta\nconversacional",
+          "bbox": [
+            1249,
+            142,
+            1349,
+            197
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5UVRN-02",
+          "text": "Confirmación\nde reserva",
+          "bbox": [
+            1383,
+            142,
+            1483,
+            197
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5UVRN-03",
+          "text": "Propuesta de\nhorarios",
+          "bbox": [
+            1517,
+            142,
+            1617,
+            197
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5UVRN-04",
+          "text": "Recordatorio",
+          "bbox": [
+            1414,
+            210,
+            1513,
+            264
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "UI-processing outputs",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5UIPOUT-01",
+          "text": "Respuesta\nConfirmacion de\ncita",
+          "bbox": [
+            1227,
+            315,
+            1327,
+            370
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5UIPOUT-02",
+          "text": "Respuesta\nCancelacion de\ncita",
+          "bbox": [
+            1360,
+            315,
+            1460,
+            370
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5UIPOUT-03",
+          "text": "Disponibilidad\nhoraria\nentregada",
+          "bbox": [
+            1482,
+            315,
+            1582,
+            370
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "API outputs",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5APIOUT-01",
+          "text": "Disponibilidad\nQuery API",
+          "bbox": [
+            1235,
+            478,
+            1335,
+            532
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5APIOUT-02",
+          "text": "Servicios\nQuery API",
+          "bbox": [
+            1360,
+            478,
+            1460,
+            532
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5APIOUT-03",
+          "text": "Profesionale\ns Query API",
+          "bbox": [
+            1485,
+            478,
+            1585,
+            532
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5APIOUT-04",
+          "text": "Historial de\nconversacion\nQuery",
+          "bbox": [
+            1603,
+            485,
+            1692,
+            533
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5APIOUT-05",
+          "text": "Crear Reserva\nCommand API",
+          "bbox": [
+            1235,
+            545,
+            1335,
+            599
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5APIOUT-06",
+          "text": "Actualizar\nReserva\nCommand API",
+          "bbox": [
+            1360,
+            545,
+            1460,
+            599
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5APIOUT-07",
+          "text": "Cancelar\nReserva\nCommand API",
+          "bbox": [
+            1485,
+            545,
+            1585,
+            599
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5APIOUT-08",
+          "text": "LLM\nConversation",
+          "bbox": [
+            1592,
+            545,
+            1692,
+            599
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Data exports",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5DE-01",
+          "text": "Historial de\nConversación",
+          "bbox": [
+            1235,
+            651,
+            1335,
+            705
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Event triggers",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5ET-01",
+          "text": "Mensaje IN\nor OUT",
+          "bbox": [
+            1395,
+            828,
+            1508,
+            890
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Jobs",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5J-01",
+          "text": "Registrar\nconversación",
+          "bbox": [
+            1067,
+            997,
+            1193,
+            1066
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5J-02",
+          "text": "Actualizar\ncontexto\nconversacional",
+          "bbox": [
+            1236,
+            997,
+            1362,
+            1066
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5J-03",
+          "text": "Limpiar contexto\nexpirado",
+          "bbox": [
+            1395,
+            997,
+            1522,
+            1066
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5J-04",
+          "text": "Resumir\nconversación",
+          "bbox": [
+            1555,
+            997,
+            1682,
+            1066
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Technology stack",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5TS-01",
+          "text": "WhatsApp\nBusiness API",
+          "bbox": [
+            1746,
+            430,
+            1845,
+            484
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5TS-02",
+          "text": "Meta Business\nSuite",
+          "bbox": [
+            1746,
+            498,
+            1845,
+            552
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P5TS-03",
+          "text": "LLM API",
+          "bbox": [
+            1746,
+            576,
+            1845,
+            630
+          ],
+          "parent": null
+        }
+      ]
+    }
+  ],
+  "empty_sections": [],
+  "notes": [
+    "Cabecera: Organization, Canvas, Version y Date están vacíos."
+  ]
+}

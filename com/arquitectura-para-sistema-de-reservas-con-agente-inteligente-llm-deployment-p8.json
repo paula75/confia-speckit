@@ -1,0 +1,336 @@
+{
+  "source": "Arquitectura para Sistema de Reservas con Agente Inteligente LLM.pdf#p8",
+  "canvas": "deployment",
+  "template": "7Cs v1.1 June 2026",
+  "header": {
+    "system": "ConfIA – Agente Inteligente Conversacional para Gestión de Reservas",
+    "organization": null,
+    "canvas_name": null,
+    "version": null,
+    "date": null
+  },
+  "sections": [
+    {
+      "name": "Environments",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P8E-01",
+          "text": "Production",
+          "bbox": [
+            52,
+            258,
+            153,
+            313
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Bundles",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P8B-01",
+          "text": "Portal web\npymes",
+          "bbox": [
+            385,
+            122,
+            486,
+            177
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P8B-02",
+          "text": "Backend/\nSitio web",
+          "bbox": [
+            541,
+            122,
+            642,
+            177
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P8B-03",
+          "text": "Backend/\nAgendamiento",
+          "bbox": [
+            657,
+            122,
+            759,
+            177
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P8B-04",
+          "text": "Base de Datos\n(PostgreSQL)",
+          "bbox": [
+            867,
+            113,
+            998,
+            184
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P8B-05",
+          "text": "Storage",
+          "bbox": [
+            1009,
+            113,
+            1139,
+            184
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Middleware",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P8M-01",
+          "text": "PostgreSQL",
+          "bbox": [
+            582,
+            225,
+            683,
+            280
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Runtime",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P8R-01",
+          "text": "Node.js",
+          "bbox": [
+            519,
+            327,
+            620,
+            382
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P8R-02",
+          "text": "cPython",
+          "bbox": [
+            657,
+            327,
+            759,
+            382
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Orchestration & scheduling",
+      "stickies": []
+    },
+    {
+      "name": "Container runtimes",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P8CR-01",
+          "text": "Docker",
+          "bbox": [
+            476,
+            535,
+            578,
+            591
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Constraints",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P8C-01",
+          "text": "Alta\ndisponibilidad de\nservicio",
+          "bbox": [
+            72,
+            711,
+            174,
+            766
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Operating systems",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P8OPS-01",
+          "text": "Linux",
+          "bbox": [
+            476,
+            632,
+            578,
+            687
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Virtualization engines",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P8VE-01",
+          "text": "GCP",
+          "bbox": [
+            464,
+            736,
+            566,
+            791
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Cloud abstractions",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P8CA-01",
+          "text": "Cloud run",
+          "bbox": [
+            401,
+            840,
+            502,
+            895
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P8CA-02",
+          "text": "Cloud Sql",
+          "bbox": [
+            559,
+            841,
+            661,
+            896
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P8CA-03",
+          "text": "Bucket",
+          "bbox": [
+            703,
+            841,
+            805,
+            896
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P8CA-04",
+          "text": "Cloud\nFunction",
+          "bbox": [
+            848,
+            834,
+            949,
+            889
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Hardware",
+      "stickies": []
+    },
+    {
+      "name": "Locations",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P8L-01",
+          "text": "Chile",
+          "bbox": [
+            490,
+            1042,
+            592,
+            1098
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Networks",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P8N-01",
+          "text": "Red GCP",
+          "bbox": [
+            1481,
+            344,
+            1582,
+            399
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P8N-02",
+          "text": "Internet /\nWAN",
+          "bbox": [
+            1481,
+            436,
+            1582,
+            491
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P8N-03",
+          "text": "Red docker",
+          "bbox": [
+            1481,
+            535,
+            1582,
+            591
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Installation",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P8I-01",
+          "text": "Deploy manual\ncoordinado por\nÁrea de Sistemas",
+          "bbox": [
+            1742,
+            333,
+            1843,
+            388
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Operation",
+      "stickies": []
+    }
+  ],
+  "empty_sections": [
+    "Orchestration & scheduling",
+    "Hardware",
+    "Operation"
+  ],
+  "notes": [
+    "Cabecera: Organization, Canvas, Version y Date están vacíos."
+  ]
+}

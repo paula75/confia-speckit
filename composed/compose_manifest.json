@@ -1,0 +1,26 @@
+{
+  "delivery_id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm",
+  "template_version": "7Cs v1.1 June 2026",
+  "inputs": [
+    "architectural-context-p2.md",
+    "business-context-p1.md",
+    "deployment-p8.md",
+    "functional-ac-p5.md",
+    "functional-ba-p6.md",
+    "functional-bw-p7.md",
+    "functional-summary.md",
+    "stage-b-manifest.json",
+    "structural-p4.md",
+    "system-context-p3.md"
+  ],
+  "outputs": [
+    "prompt_constitution.md",
+    "prompt_specify.md",
+    "clarify_input.md",
+    "plan_input.md",
+    "trace_annex.md"
+  ],
+  "trace_rows": 363,
+  "clarifications": 94,
+  "spec_audit_executed": false
+}

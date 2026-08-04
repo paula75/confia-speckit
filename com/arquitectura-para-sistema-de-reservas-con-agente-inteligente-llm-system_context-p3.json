@@ -1,0 +1,440 @@
+{
+  "source": "Arquitectura para Sistema de Reservas con Agente Inteligente LLM.pdf#p3",
+  "canvas": "system_context",
+  "template": "7Cs v1.1 June 2026",
+  "header": {
+    "system": "ConfIA – Agente Inteligente Conversacional para Gestión de Reservas",
+    "organization": null,
+    "canvas_name": null,
+    "version": null,
+    "date": null
+  },
+  "sections": [
+    {
+      "name": "Source users",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3SU-01",
+          "text": "Profesionales\ndel Centro",
+          "bbox": [
+            112,
+            157,
+            242,
+            228
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3SU-02",
+          "text": "Administrador\ndel Centro",
+          "bbox": [
+            253,
+            157,
+            371,
+            221
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3SU-03",
+          "text": "Cliente",
+          "bbox": [
+            118,
+            245,
+            236,
+            309
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3SU-04",
+          "text": "Recepcionista\ndel Centro",
+          "bbox": [
+            253,
+            245,
+            371,
+            309
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "User data input interfaces",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3UDII-01",
+          "text": "WhatsApp",
+          "bbox": [
+            639,
+            195,
+            769,
+            266
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "User data output interfaces",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3UDOI-01",
+          "text": "WhatsApp",
+          "bbox": [
+            986,
+            177,
+            1116,
+            248
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3UDOI-02",
+          "text": "SMS",
+          "bbox": [
+            1128,
+            177,
+            1258,
+            248
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3UDOI-03",
+          "text": "Email",
+          "bbox": [
+            1275,
+            177,
+            1405,
+            248
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3UDOI-04",
+          "text": "falta\ninterfaz\nweb",
+          "bbox": [
+            1238,
+            295,
+            1329,
+            389
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Target users",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3TU-01",
+          "text": "Profesionales\ndel Centro",
+          "bbox": [
+            1542,
+            160,
+            1673,
+            231
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3TU-02",
+          "text": "Administrador\ndel Centro",
+          "bbox": [
+            1684,
+            160,
+            1802,
+            224
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3TU-03",
+          "text": "Cliente",
+          "bbox": [
+            1549,
+            248,
+            1666,
+            312
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3TU-04",
+          "text": "Recepcionista\ndel Centro",
+          "bbox": [
+            1684,
+            248,
+            1802,
+            312
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Source systems",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3SS-01",
+          "text": "WhatsApp",
+          "bbox": [
+            51,
+            441,
+            182,
+            512
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3SS-02",
+          "text": "LLM",
+          "bbox": [
+            193,
+            441,
+            323,
+            512
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3SS-03",
+          "text": "Proveedor\nde Mapas",
+          "bbox": [
+            335,
+            441,
+            465,
+            512
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "System data input interfaces",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3SDII-01",
+          "text": "Command\nRequest",
+          "bbox": [
+            582,
+            457,
+            712,
+            528
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3SDII-02",
+          "text": "Command\nEndpoints",
+          "bbox": [
+            723,
+            457,
+            853,
+            528
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "System data output interfaces",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3SDOI-01",
+          "text": "Command\nRequest",
+          "bbox": [
+            1111,
+            444,
+            1241,
+            515
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Target systems",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3TS-01",
+          "text": "WhatsApp",
+          "bbox": [
+            1529,
+            444,
+            1660,
+            515
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3TS-02",
+          "text": "LLM",
+          "bbox": [
+            1671,
+            444,
+            1801,
+            515
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Source repositories",
+      "stickies": []
+    },
+    {
+      "name": "Repository data input interfaces",
+      "stickies": []
+    },
+    {
+      "name": "Repository data output interfaces",
+      "stickies": []
+    },
+    {
+      "name": "Target repositories",
+      "stickies": []
+    },
+    {
+      "name": "Source devices",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3SD-01",
+          "text": "PCs",
+          "bbox": [
+            98,
+            954,
+            197,
+            1008
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3SD-02",
+          "text": "Notebooks",
+          "bbox": [
+            209,
+            954,
+            308,
+            1008
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3SD-03",
+          "text": "Dispositivos\nMóviles",
+          "bbox": [
+            319,
+            954,
+            419,
+            1008
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Device data input interfaces",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3DDII-01",
+          "text": "File System",
+          "bbox": [
+            595,
+            944,
+            695,
+            999
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3DDII-02",
+          "text": "Cámara del\nDispositivo",
+          "bbox": [
+            723,
+            944,
+            823,
+            999
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Device data output interfaces",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3DDOI-01",
+          "text": "Pantalla del\ndispositivo",
+          "bbox": [
+            1086,
+            944,
+            1185,
+            999
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3DDOI-02",
+          "text": "Monitor PC",
+          "bbox": [
+            1222,
+            944,
+            1321,
+            999
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Target devices",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3TD-01",
+          "text": "PCs",
+          "bbox": [
+            1503,
+            954,
+            1603,
+            1008
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3TD-02",
+          "text": "Notebooks",
+          "bbox": [
+            1614,
+            954,
+            1714,
+            1008
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P3TD-03",
+          "text": "Dispositivos\nMóviles",
+          "bbox": [
+            1725,
+            954,
+            1825,
+            1008
+          ],
+          "parent": null
+        }
+      ]
+    }
+  ],
+  "empty_sections": [
+    "Source repositories",
+    "Repository data input interfaces",
+    "Repository data output interfaces",
+    "Target repositories"
+  ],
+  "notes": [
+    "Cabecera: Organization, Canvas, Version y Date están vacíos."
+  ]
+}

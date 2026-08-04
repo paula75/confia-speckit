@@ -1,0 +1,430 @@
+{
+  "source": "Arquitectura para Sistema de Reservas con Agente Inteligente LLM.pdf#p4",
+  "canvas": "structural",
+  "template": "7Cs v1.1 June 2026",
+  "header": {
+    "system": "ConfIA – Agente Inteligente Conversacional para Gestión de Reservas",
+    "organization": null,
+    "canvas_name": null,
+    "version": null,
+    "date": null
+  },
+  "sections": [
+    {
+      "name": "Data input interfaces to frontend bundles",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P4DIF-01",
+          "text": "Formulario\ncarga de servicio",
+          "bbox": [
+            8,
+            143,
+            148,
+            220
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P4DIF-02",
+          "text": "Formulario\ncarga de agenda",
+          "bbox": [
+            167,
+            159,
+            307,
+            235
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P4DIF-03",
+          "text": "Formulario\ncarga de\nprofesional",
+          "bbox": [
+            320,
+            133,
+            461,
+            209
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Frontend bundles",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P4FB-01",
+          "text": "Pagina web\nadmin locales",
+          "bbox": [
+            921,
+            143,
+            1061,
+            220
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Data output interfaces from frontend bundles",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P4DOF-01",
+          "text": "Notificación\nweb local",
+          "bbox": [
+            1767,
+            156,
+            1907,
+            232
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Data input interfaces to backend bundles",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P4DIB-01",
+          "text": "command request\n(whatsapp business)-\nConversacion",
+          "bbox": [
+            25,
+            313,
+            143,
+            377
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P4DIB-02",
+          "text": "command\nrequest -\nUbicación",
+          "bbox": [
+            161,
+            307,
+            295,
+            380
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P4DIB-03",
+          "text": "command request\n(servicio llm)-\nConversacion",
+          "bbox": [
+            320,
+            312,
+            437,
+            376
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Backend bundles",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P4BB-01",
+          "text": "Backend / Agente\nconversacional y\nde reservas",
+          "bbox": [
+            742,
+            313,
+            882,
+            389
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P4BB-02",
+          "text": "Backend\nagendamiento\n(multi-tenant)",
+          "bbox": [
+            917,
+            308,
+            1057,
+            384
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P4BB-03",
+          "text": "Backend / Pagina\nweb admin locales\n(multi-tenant)",
+          "bbox": [
+            1096,
+            308,
+            1236,
+            384
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Data output interfaces from backend bundles",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P4DOB-01",
+          "text": "Respuesta\nWhatsApp",
+          "bbox": [
+            1455,
+            318,
+            1616,
+            431
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P4DOB-02",
+          "text": "Crear Reserva\nCommand\nGmail - Outlook",
+          "bbox": [
+            1626,
+            318,
+            1728,
+            373
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P4DOB-03",
+          "text": "Actualizar Reserva\nCommand\nGmail - Outlook",
+          "bbox": [
+            1739,
+            318,
+            1841,
+            373
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P4DOB-04",
+          "text": "Cancelar Reserva\nCommand\nGmail - Outlook",
+          "bbox": [
+            1842,
+            318,
+            1921,
+            373
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P4DOB-05",
+          "text": "Notificación\nWhatsApp",
+          "bbox": [
+            1806,
+            370,
+            1921,
+            440
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Data input interfaces to repository bundles",
+      "stickies": []
+    },
+    {
+      "name": "Repository bundles",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P4RB-01",
+          "text": "PostgreSQL",
+          "bbox": [
+            754,
+            472,
+            871,
+            536
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P4RB-02",
+          "text": "Storage",
+          "bbox": [
+            887,
+            472,
+            1004,
+            536
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P4RB-03",
+          "text": "MongoDB",
+          "bbox": [
+            1026,
+            472,
+            1144,
+            536
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Data output interfaces from repository bundles",
+      "stickies": []
+    },
+    {
+      "name": "Data input interfaces to platform & infrastructure bundles",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P4DIPI-01",
+          "text": "Imágenes /\ncontenedores\nDocker",
+          "bbox": [
+            221,
+            664,
+            323,
+            720
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Platform & Infrastructure bundles",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P4PIB-01",
+          "text": "Docker",
+          "bbox": [
+            608,
+            665,
+            722,
+            726
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P4PIB-02",
+          "text": "Servicio\nLLM",
+          "bbox": [
+            776,
+            658,
+            916,
+            734
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P4PIB-03",
+          "text": "whatsapp\nbusiness",
+          "bbox": [
+            928,
+            658,
+            1069,
+            734
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Data output interfaces from platform & infrastructure bundles",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P4DOPI-01",
+          "text": "Entorno de\nejecución",
+          "bbox": [
+            1626,
+            682,
+            1728,
+            738
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Data input interfaces to device bundles",
+      "stickies": []
+    },
+    {
+      "name": "Device bundles",
+      "stickies": []
+    },
+    {
+      "name": "Data output interfaces from device bundles",
+      "stickies": []
+    },
+    {
+      "name": "Constraints",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P4C-01",
+          "text": "deploy\nnube",
+          "bbox": [
+            205,
+            980,
+            345,
+            1056
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P4C-02",
+          "text": "Agendamiento\nexclusivo por\noutlook y gmail",
+          "bbox": [
+            411,
+            980,
+            551,
+            1056
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P4C-03",
+          "text": "Persistencia\nexclusiva de datos\npropios de ConfIA",
+          "bbox": [
+            616,
+            980,
+            757,
+            1056
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P4C-04",
+          "text": "Operación exclusiva\nmediante\nWhatsApp",
+          "bbox": [
+            839,
+            980,
+            979,
+            1056
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P4C-05",
+          "text": "Integración\ndesacoplada\nmediante APIs",
+          "bbox": [
+            1061,
+            980,
+            1202,
+            1056
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P4C-06",
+          "text": "Arquitectura\nSaaS\nMultitenant",
+          "bbox": [
+            1284,
+            980,
+            1424,
+            1056
+          ],
+          "parent": null
+        }
+      ]
+    }
+  ],
+  "empty_sections": [
+    "Data input interfaces to repository bundles",
+    "Data output interfaces from repository bundles",
+    "Data input interfaces to device bundles",
+    "Device bundles",
+    "Data output interfaces from device bundles"
+  ],
+  "notes": [
+    "Cabecera: Organization, Canvas, Version y Date están vacíos.",
+    "En 'Data output interfaces from backend bundles', los tres post-it superiores y 'Notificación WhatsApp' se solapan; sus bbox se registran por sus límites visuales individuales."
+  ]
+}

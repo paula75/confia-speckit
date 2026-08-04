@@ -1,0 +1,89 @@
+{
+  "delivery_id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm",
+  "source": "docs/Arquitectura para Sistema de Reservas con Agente Inteligente LLM.pdf",
+  "total_pages": 10,
+  "pages": [
+    {
+      "page": 1,
+      "title": "Business Context Canvas",
+      "classification": "canvas",
+      "canvas": "business_context",
+      "evidence": "evidence/arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-p1.jpg",
+      "com": "com/arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-business_context-p1.json"
+    },
+    {
+      "page": 2,
+      "title": "Architectural Context Canvas",
+      "classification": "canvas",
+      "canvas": "architectural_context",
+      "evidence": "evidence/arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-p2.jpg",
+      "com": "com/arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-architectural_context-p2.json"
+    },
+    {
+      "page": 3,
+      "title": "System Context Canvas",
+      "classification": "canvas",
+      "canvas": "system_context",
+      "evidence": "evidence/arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-p3.jpg",
+      "com": "com/arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-system_context-p3.json"
+    },
+    {
+      "page": 4,
+      "title": "Structural Canvas",
+      "classification": "canvas",
+      "canvas": "structural",
+      "evidence": "evidence/arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-p4.jpg",
+      "com": "com/arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-structural-p4.json"
+    },
+    {
+      "page": 5,
+      "title": "Functional Canvas",
+      "classification": "canvas",
+      "canvas": "functional",
+      "evidence": "evidence/arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-p5.jpg",
+      "com": "com/arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-functional-p5.json"
+    },
+    {
+      "page": 6,
+      "title": "Functional Canvas",
+      "classification": "canvas",
+      "canvas": "functional",
+      "evidence": "evidence/arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-p6.jpg",
+      "com": "com/arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-functional-p6.json"
+    },
+    {
+      "page": 7,
+      "title": "Functional Canvas",
+      "classification": "canvas",
+      "canvas": "functional",
+      "evidence": "evidence/arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-p7.jpg",
+      "com": "com/arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-functional-p7.json"
+    },
+    {
+      "page": 8,
+      "title": "Deployment Canvas",
+      "classification": "canvas",
+      "canvas": "deployment",
+      "evidence": "evidence/arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-p8.jpg",
+      "com": "com/arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-deployment-p8.json"
+    },
+    {
+      "page": 9,
+      "title": null,
+      "classification": "out_of_scope",
+      "canvas": null,
+      "evidence": "evidence/arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-p9.jpg",
+      "com": null,
+      "reason": "La página es un diagrama y no muestra en la esquina superior izquierda ninguno de los seis títulos literales del vocabulario cerrado."
+    },
+    {
+      "page": 10,
+      "title": null,
+      "classification": "out_of_scope",
+      "canvas": null,
+      "evidence": "evidence/arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-p10.jpg",
+      "com": null,
+      "reason": "La página es un diagrama y no muestra en la esquina superior izquierda ninguno de los seis títulos literales del vocabulario cerrado."
+    }
+  ]
+}

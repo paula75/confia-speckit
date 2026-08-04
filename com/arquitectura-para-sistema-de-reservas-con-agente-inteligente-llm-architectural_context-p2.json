@@ -1,0 +1,717 @@
+{
+  "source": "Arquitectura para Sistema de Reservas con Agente Inteligente LLM.pdf#p2",
+  "canvas": "architectural_context",
+  "template": "7Cs v1.1 June 2026",
+  "header": {
+    "system": "ConfIA – Agente Inteligente Conversacional para Gestión de Reservas",
+    "organization": null,
+    "canvas_name": null,
+    "version": null,
+    "date": null
+  },
+  "sections": [
+    {
+      "name": "Stakeholders",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2ST-01",
+          "text": "Cliente",
+          "bbox": [
+            21,
+            152,
+            149,
+            222
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2ST-02",
+          "text": "Profesional\ndel Centro",
+          "bbox": [
+            192,
+            152,
+            320,
+            222
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2ST-03",
+          "text": "Administrador\ndel centro",
+          "bbox": [
+            362,
+            152,
+            491,
+            222
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2ST-04",
+          "text": "Sistema de\nAgenda / ERP\ndel centro",
+          "bbox": [
+            533,
+            152,
+            661,
+            222
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2ST-05",
+          "text": "WhatsApp\nBusiness",
+          "bbox": [
+            703,
+            152,
+            832,
+            222
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2ST-06",
+          "text": "Equipo de\nOperación\nConfIA",
+          "bbox": [
+            874,
+            152,
+            1002,
+            222
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Business strategy",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2BS-01",
+          "text": "Automatizar la\natención\nconversacional",
+          "bbox": [
+            21,
+            322,
+            149,
+            392
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2BS-02",
+          "text": "Incrementar la\nocupación efectiva\nde las agendas",
+          "bbox": [
+            173,
+            322,
+            302,
+            392
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2BS-03",
+          "text": "Reducir la carga\nadministrativa\ndel centro",
+          "bbox": [
+            336,
+            323,
+            464,
+            393
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2BS-04",
+          "text": "Escalar el servicio\npara múltiples\ncentros de belleza",
+          "bbox": [
+            499,
+            323,
+            627,
+            393
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2BS-05",
+          "text": "Brindar atención\npermanente mediante\ncanales digitales 24/7.",
+          "bbox": [
+            652,
+            323,
+            781,
+            393
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2BS-06",
+          "text": "Mejorar la\nexperiencia del\ncliente",
+          "bbox": [
+            806,
+            323,
+            934,
+            393
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "IT strategy",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2ITS-01",
+          "text": "Plataforma\nSaaS",
+          "bbox": [
+            988,
+            313,
+            1116,
+            383
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2ITS-02",
+          "text": "Cloud\nNative",
+          "bbox": [
+            1152,
+            313,
+            1281,
+            383
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2ITS-03",
+          "text": "Integración\ndesacoplada con\nsistemas existentes",
+          "bbox": [
+            1307,
+            313,
+            1436,
+            383
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2ITS-04",
+          "text": "Configuración\ncentralizada para\nmúltiples centros",
+          "bbox": [
+            1462,
+            313,
+            1591,
+            383
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Business goals & drivers",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2BGD-01",
+          "text": "Reducir tiempo\nde respuesta al\ncliente",
+          "bbox": [
+            21,
+            497,
+            149,
+            567
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2BGD-02",
+          "text": "Incrementar\nconversión de\nconsultas en reservas",
+          "bbox": [
+            178,
+            497,
+            307,
+            567
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2BGD-03",
+          "text": "Recuperar\nautomáticamente\nhoras canceladas",
+          "bbox": [
+            336,
+            497,
+            464,
+            567
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2BGD-04",
+          "text": "Reducir inasistencias\nmediante\nrecordatorios\nautomáticos",
+          "bbox": [
+            493,
+            497,
+            622,
+            567
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2BGD-05",
+          "text": "Mantener\nsincronizada la\nagenda del centro",
+          "bbox": [
+            651,
+            497,
+            779,
+            567
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2BGD-06",
+          "text": "Reducir los\nno-shows",
+          "bbox": [
+            808,
+            446,
+            937,
+            516
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2BGD-07",
+          "text": "Centralizar la\ngestión de\nreservas",
+          "bbox": [
+            808,
+            533,
+            937,
+            603
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Technology goals & drivers",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2TGD-01",
+          "text": "Alta\ndisponibilidad",
+          "bbox": [
+            980,
+            493,
+            1109,
+            563
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2TGD-02",
+          "text": "Escalabilidad",
+          "bbox": [
+            1143,
+            493,
+            1272,
+            563
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2TGD-03",
+          "text": "Seguridad",
+          "bbox": [
+            1300,
+            493,
+            1429,
+            563
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2TGD-04",
+          "text": "Integrabilidad",
+          "bbox": [
+            1461,
+            493,
+            1589,
+            563
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2TGD-05",
+          "text": "Baja latencia\nconversacional",
+          "bbox": [
+            1621,
+            493,
+            1749,
+            563
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2TGD-06",
+          "text": "Mantenibilidad",
+          "bbox": [
+            1781,
+            493,
+            1909,
+            563
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Business standards & policies",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2BSP-01",
+          "text": "Política de\nconfirmación de\nreservas",
+          "bbox": [
+            31,
+            672,
+            159,
+            742
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2BSP-02",
+          "text": "Política de\ncancelación y\nreprogramación",
+          "bbox": [
+            192,
+            672,
+            320,
+            742
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2BSP-03",
+          "text": "Política de\natención mediante\nWhatsApp",
+          "bbox": [
+            353,
+            672,
+            481,
+            742
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2BSP-04",
+          "text": "Política de\nprotección de\ndatos del cliente",
+          "bbox": [
+            519,
+            672,
+            647,
+            742
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2BSP-05",
+          "text": "Política de\npenalización por\ninasistencia",
+          "bbox": [
+            675,
+            672,
+            804,
+            742
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Technology standards & policies",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2TSP-01",
+          "text": "Arquitectura\ndesacoplada\nmediante adapters",
+          "bbox": [
+            980,
+            672,
+            1109,
+            742
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2TSP-02",
+          "text": "Arquitectura\nSaaS Multi-\ntenant",
+          "bbox": [
+            1133,
+            672,
+            1262,
+            742
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2TSP-03",
+          "text": "Integración\nmediante APIs",
+          "bbox": [
+            1307,
+            672,
+            1436,
+            742
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2TSP-04",
+          "text": "Diseño\nmodular",
+          "bbox": [
+            1467,
+            672,
+            1596,
+            742
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2TSP-05",
+          "text": "Protección de\ndatos\npersonales",
+          "bbox": [
+            1628,
+            672,
+            1756,
+            742
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2TSP-06",
+          "text": "API REST para\nintegración\ninterna",
+          "bbox": [
+            1788,
+            672,
+            1916,
+            742
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Situational constraints",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2SC-01",
+          "text": "Operar\nexclusivamente\nmediante WhatsApp",
+          "bbox": [
+            21,
+            832,
+            149,
+            902
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2SC-02",
+          "text": "Integrarse al\nsistema de\ngestión existente",
+          "bbox": [
+            192,
+            832,
+            320,
+            902
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2SC-03",
+          "text": "No reemplazar el\nsistema de gestión\ndel centro",
+          "bbox": [
+            362,
+            832,
+            491,
+            902
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2SC-04",
+          "text": "Sincronizar\ndisponibilidad y\nreservas en tiempo\nreal",
+          "bbox": [
+            533,
+            832,
+            661,
+            902
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2SC-05",
+          "text": "Operar\ncontinuamente\n24×7",
+          "bbox": [
+            704,
+            834,
+            832,
+            903
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2SC-06",
+          "text": "Integración con\nAPIs de terceros",
+          "bbox": [
+            874,
+            829,
+            1003,
+            899
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2SC-07",
+          "text": "Disponibilidad\nde internet",
+          "bbox": [
+            1045,
+            829,
+            1173,
+            899
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Business principles",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2BPR-01",
+          "text": "La experiencia\ndel cliente tiene\nprioridad",
+          "bbox": [
+            21,
+            1003,
+            149,
+            1073
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2BPR-02",
+          "text": "Automatizar sin\nmodificar la\noperación del centro",
+          "bbox": [
+            192,
+            1003,
+            320,
+            1073
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2BPR-03",
+          "text": "Mantener una única\nfuente de información\npara las reservas",
+          "bbox": [
+            362,
+            1003,
+            491,
+            1073
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2BPR-04",
+          "text": "Facilitar la\nautogestión del\ncliente",
+          "bbox": [
+            533,
+            1003,
+            661,
+            1073
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2BPR-05",
+          "text": "Minimizar el\nimpacto sobre los\nprocesos actuales",
+          "bbox": [
+            704,
+            1003,
+            832,
+            1073
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Technical principles",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2TP-01",
+          "text": "Bajo\nacoplamiento",
+          "bbox": [
+            975,
+            1003,
+            1103,
+            1073
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2TP-02",
+          "text": "Alta\ncohesión",
+          "bbox": [
+            1137,
+            963,
+            1265,
+            1033
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2TP-03",
+          "text": "Configuración\nantes que\npersonalización",
+          "bbox": [
+            1185,
+            1050,
+            1313,
+            1120
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2TP-04",
+          "text": "Componentes\nreutilizables",
+          "bbox": [
+            1334,
+            965,
+            1463,
+            1035
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2TP-05",
+          "text": "Escalabilidad\nhorizontal",
+          "bbox": [
+            1375,
+            1052,
+            1504,
+            1122
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2TP-06",
+          "text": "Integración\nmediante\nadapters",
+          "bbox": [
+            1532,
+            965,
+            1661,
+            1035
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P2TP-07",
+          "text": "Observabilidad\nmediante logging\ny monitoreo",
+          "bbox": [
+            1695,
+            999,
+            1823,
+            1069
+          ],
+          "parent": null
+        }
+      ]
+    }
+  ],
+  "empty_sections": [],
+  "notes": [
+    "Cabecera: Organization, Canvas, Version y Date están vacíos."
+  ]
+}

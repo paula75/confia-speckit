@@ -1,0 +1,629 @@
+{
+  "source": "Arquitectura para Sistema de Reservas con Agente Inteligente LLM.pdf#p1",
+  "canvas": "business_context",
+  "template": "7Cs v1.1 June 2026",
+  "header": {
+    "system": "ConfIA – Agente Inteligente Conversacional para Gestión de Reservas",
+    "organization": null,
+    "canvas_name": null,
+    "version": null,
+    "date": null
+  },
+  "sections": [
+    {
+      "name": "Business products & services",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BPS-01",
+          "text": "Gestión integral\nde Reservas",
+          "bbox": [
+            61,
+            160,
+            161,
+            214
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Business units & actors",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BUA-01",
+          "text": "Cliente",
+          "bbox": [
+            61,
+            303,
+            161,
+            357
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BUA-02",
+          "text": "Profesionales\ndel Centro",
+          "bbox": [
+            194,
+            303,
+            294,
+            357
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BUA-03",
+          "text": "Administrador\ndel centro",
+          "bbox": [
+            327,
+            303,
+            426,
+            357
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BUA-04",
+          "text": "Recepcionista",
+          "bbox": [
+            459,
+            303,
+            559,
+            357
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Business roles",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BR-01",
+          "text": "Administrador\nde la operación",
+          "bbox": [
+            970,
+            307,
+            1070,
+            361
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BR-02",
+          "text": "Coordinador\nde agenda",
+          "bbox": [
+            1092,
+            307,
+            1192,
+            361
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BR-03",
+          "text": "Prestador\ndel servicio",
+          "bbox": [
+            1214,
+            307,
+            1314,
+            361
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BR-04",
+          "text": "Solicitante\nde reserva",
+          "bbox": [
+            1337,
+            307,
+            1436,
+            361
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Business objects",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BO-01",
+          "text": "Cliente",
+          "bbox": [
+            61,
+            454,
+            161,
+            508
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BO-02",
+          "text": "Profesional",
+          "bbox": [
+            194,
+            454,
+            294,
+            508
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BO-03",
+          "text": "Local",
+          "bbox": [
+            337,
+            454,
+            437,
+            508
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BO-04",
+          "text": "Disponibilidad",
+          "bbox": [
+            480,
+            454,
+            580,
+            508
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BO-05",
+          "text": "Historial de\natención",
+          "bbox": [
+            623,
+            454,
+            723,
+            508
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BO-06",
+          "text": "Servicio",
+          "bbox": [
+            61,
+            534,
+            161,
+            588
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BO-07",
+          "text": "Agenda",
+          "bbox": [
+            194,
+            534,
+            294,
+            588
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BO-08",
+          "text": "Reserva",
+          "bbox": [
+            337,
+            534,
+            437,
+            588
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BO-09",
+          "text": "Preferencias\ndel cliente",
+          "bbox": [
+            480,
+            534,
+            580,
+            588
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Business processes",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BP-01",
+          "text": "Gestionar\nservicios\ndisponibles",
+          "bbox": [
+            979,
+            447,
+            1079,
+            501
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BP-02",
+          "text": "Agendar\nuna cita",
+          "bbox": [
+            1086,
+            447,
+            1186,
+            501
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BP-03",
+          "text": "Confirmar\nuna cita",
+          "bbox": [
+            1193,
+            447,
+            1292,
+            501
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BP-04",
+          "text": "Reprogramar\nuna cita",
+          "bbox": [
+            1301,
+            447,
+            1400,
+            501
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BP-05",
+          "text": "Cancelar\nuna cita",
+          "bbox": [
+            1413,
+            449,
+            1512,
+            503
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BP-06",
+          "text": "Confirmar\nasistencia",
+          "bbox": [
+            1524,
+            449,
+            1624,
+            503
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BP-07",
+          "text": "Seguimiento\nde reservas",
+          "bbox": [
+            1636,
+            449,
+            1736,
+            503
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BP-08",
+          "text": "Identificar\nrequerimiento\ndel cliente",
+          "bbox": [
+            1748,
+            449,
+            1847,
+            503
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Business functions",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BF-01",
+          "text": "Gestión de\nservicios",
+          "bbox": [
+            1026,
+            586,
+            1126,
+            640
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BF-02",
+          "text": "Gestión de\nagendas y\ndisponibilidad",
+          "bbox": [
+            1145,
+            586,
+            1245,
+            640
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BF-03",
+          "text": "Gestión de\nclientes",
+          "bbox": [
+            1262,
+            586,
+            1361,
+            640
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BF-04",
+          "text": "Gestión de\nprofesionales",
+          "bbox": [
+            1393,
+            586,
+            1493,
+            640
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BF-05",
+          "text": "Gestión de\nconversaciones",
+          "bbox": [
+            1525,
+            586,
+            1625,
+            640
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BF-06",
+          "text": "Gestión de\nreservas",
+          "bbox": [
+            1657,
+            586,
+            1756,
+            640
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Business infrastructure & equipment",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BIE-01",
+          "text": "PC del\nEncargado del\nLocal",
+          "bbox": [
+            511,
+            724,
+            611,
+            778
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BIE-02",
+          "text": "Dispositivos\nMóvil del\nRecepcionista",
+          "bbox": [
+            624,
+            724,
+            724,
+            778
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BIE-03",
+          "text": "PC del\nRecepcionista",
+          "bbox": [
+            737,
+            724,
+            837,
+            778
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BIE-04",
+          "text": "Dispositivo Móvil\ndel Cliente",
+          "bbox": [
+            850,
+            724,
+            950,
+            778
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BIE-05",
+          "text": "PC del\nCliente",
+          "bbox": [
+            963,
+            724,
+            1063,
+            778
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BIE-06",
+          "text": "Dispositivo Móvil\ndel Profesional",
+          "bbox": [
+            1076,
+            724,
+            1176,
+            778
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BIE-07",
+          "text": "PC del\nProfesional",
+          "bbox": [
+            1189,
+            724,
+            1289,
+            778
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BIE-08",
+          "text": "Servicio\nCloud",
+          "bbox": [
+            1302,
+            724,
+            1402,
+            778
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Business locations",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BL-01",
+          "text": "Región\nMetropolitana",
+          "bbox": [
+            387,
+            867,
+            487,
+            921
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "Business facilities",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BFA-01",
+          "text": "Oficina\nAdministracion",
+          "bbox": [
+            1006,
+            872,
+            1105,
+            926
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BFA-02",
+          "text": "Recepción",
+          "bbox": [
+            1130,
+            872,
+            1229,
+            926
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BFA-03",
+          "text": "Sala de\nespera",
+          "bbox": [
+            1251,
+            872,
+            1351,
+            926
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1BFA-04",
+          "text": "Estación de\ntrabajo",
+          "bbox": [
+            1380,
+            872,
+            1480,
+            926
+          ],
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "System’s functional areas",
+      "stickies": [
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1SFA-01",
+          "text": "Gestión de\nagenda",
+          "bbox": [
+            91,
+            1015,
+            190,
+            1069
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1SFA-02",
+          "text": "Gestión de\nprofesionales",
+          "bbox": [
+            223,
+            1015,
+            323,
+            1069
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1SFA-03",
+          "text": "Gestión de\nservicios",
+          "bbox": [
+            371,
+            1015,
+            471,
+            1069
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1SFA-04",
+          "text": "Ejecución\nde servicio",
+          "bbox": [
+            519,
+            1015,
+            618,
+            1069
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1SFA-05",
+          "text": "Seguimiento de\nservicio\nagendado",
+          "bbox": [
+            667,
+            1015,
+            766,
+            1069
+          ],
+          "parent": null
+        },
+        {
+          "id": "arquitectura-para-sistema-de-reservas-con-agente-inteligente-llm-P1SFA-06",
+          "text": "Gestión de\nconversacional",
+          "bbox": [
+            800,
+            1015,
+            900,
+            1069
+          ],
+          "parent": null
+        }
+      ]
+    }
+  ],
+  "empty_sections": [],
+  "notes": [
+    "Cabecera: Organization, Canvas, Version y Date están vacíos."
+  ]
+}
