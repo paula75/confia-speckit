@@ -1,1 +1,14 @@
-valida
+VÁLIDA
+
+C = 363/363 = 1.00 (>= 1.00 requerido)
+A = 72/182 ≈ 0.40 (informativo, no es criterio de rechazo)
+T = 0 (== 0 requerido)
+V = 149/149 = 1.00 (FR verificables)
+
+Condiciones de rechazo automático del contrato 7cs-spec-audit (C < 1.00 o T > 0): ninguna se cumple.
+Observaciones abiertas (no bloquean el veredicto, ver audit_report.md y checklist_input.md):
+- 13 bloques (CE-1..7, NFR-TEC-1..6) sin traza "<-" inline en prompt_specify.md.
+- Discrepancia de censo de bundles Structural(10)/Deployment(5)/Functional(3), heredada de plan_input.md.
+- compose_manifest.json declara 94 clarifications; el recuento real es 78.
+- Ausencias esperables sin declarar: respaldo, monitoreo operativo, accesibilidad.
+- 55 preguntas numeradas pendientes de resolución por el cliente en clarify_input.md.

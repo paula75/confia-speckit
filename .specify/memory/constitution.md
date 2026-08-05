@@ -1,33 +1,37 @@
 <!--
 Sync Impact Report
-- Version change: [TEMPLATE] → 1.0.0 (ratificación inicial, revisada tras comparar
-  contra una constitution manual previa redactada con ChatGPT)
-- Principios I-IV: sin cambios respecto al primer borrador. Mapean 1:1 los 22
-  post-its del Architectural Context Canvas / Business Context Canvas (P1-P22)
-  auditados por el pipeline 7Cs (C=1.000, T=0, V=1.000). No se agregó ni descartó
-  ninguno.
-- Principio V añadido: "Principios Adicionales del Equipo" — incorpora 3 ideas de
-  la constitution manual (supervisión humana, canal conversacional único,
-  independencia del proveedor de procesamiento conversacional externo) que NO
-  provienen de los 22 post-its auditados. Se marcan explícitamente como decisión
-  de equipo, no como traza de canvas, para no alterar C=1.000 sobre los 22
-  originales. Los dos últimos se reescribieron sin nombrar tecnología (evitando
-  "WhatsApp Business" y "LLM", ambos en la lista negra T=0 del auditor) — decisión
-  del usuario: neutralizar en vez de omitir o citar tal cual.
-- Sección "Flujo de Trabajo de Desarrollo" (antes TODO/SECTION_3): completada con
-  6 principios de proceso tomados de la constitution manual (spec-driven, entrega
-  incremental, fuente única de verdad, código simple, calidad verificable,
-  trazabilidad spec→plan→tarea→criterio). Tampoco trazan a post-its; son
-  metodología de equipo/Spec Kit.
-- Sección "Restricciones Adicionales" (SECTION_2): permanece en TODO. El alcance
-  de entrega (Tarea 4, integraciones concretas) se decidió dejar para
-  `/speckit-plan`, donde sí se admite nombrar tecnología, en vez de esta
-  constitution.
+- Version change: 1.0.0 → 2.0.0 (MAJOR — remoción retroactiva de contenido no
+  respaldado por el pipeline 7Cs, por instrucción explícita de la Etapa E de
+  regeneración: la constitution debe derivarse EXCLUSIVAMENTE de
+  `composed/prompt_constitution.md`).
+- Principios I-IV: SIN CAMBIOS de contenido. Siguen mapeando 1:1 los 22 post-its
+  del Architectural Context Canvas / Business Context Canvas (P1-P22) auditados
+  por el pipeline 7Cs (C=1.000, T=0, V=1.000). No se agregó ni descartó ninguno.
+- REMOVIDO: Principio V "Principios Adicionales del Equipo" (P23, P24, P25). Estas
+  3 reglas (supervisión humana, canal conversacional único, independencia del
+  proveedor de procesamiento conversacional externo) no provienen de ningún
+  post-it de `composed/prompt_constitution.md` — eran una decisión de equipo
+  incorporada en la versión 1.0.0. Se retiran para que la constitution quede
+  respaldada en su totalidad por el prompt de entrada del pipeline, tal como
+  exige esta etapa. No se pierden: quedan documentadas aquí y pueden
+  reincorporarse mediante una enmienda explícita si el equipo las ratifica de
+  nuevo.
+- REMOVIDO: sección "Flujo de Trabajo de Desarrollo" (SECTION_3), con sus 6
+  principios de proceso (spec-driven, entrega incremental, fuente única de
+  verdad, código simple, calidad verificable, trazabilidad spec→plan→tarea→
+  criterio). Ninguno trazaba a un post-it del pipeline; vuelve a
+  TODO(SECTION_3_CONTENT) por la misma razón que el punto anterior.
+- Sección "Restricciones Adicionales" (SECTION_2): permanece en TODO, sin
+  cambios. El alcance de entrega se sigue difiriendo a `/speckit-plan`, donde sí
+  se admite nombrar tecnología, en vez de esta constitution.
+- Governance: referencia a "principios I-V" corregida a "principios I-IV" para
+  reflejar la remoción del Principio V.
 - Plantillas dependientes (.specify/templates/*.md) no fueron modificadas por
   este comando.
 - TODOs pendientes: RATIFICATION_DATE (fecha de ratificación original no provista
-  por ninguna de las dos fuentes), SECTION_2_CONTENT (alcance de entrega, diferido
-  a plan.md).
+  por ninguna fuente), SECTION_2_CONTENT (alcance de entrega, diferido a
+  plan.md), SECTION_3_CONTENT (flujo de trabajo, diferido — no respaldado por
+  el pipeline).
 -->
 
 # Gestión Integral de Reservas — Constitution
@@ -78,49 +82,22 @@ de implementación y esta constitución, prevalecerán los principios aquí defi
 - **P22**: El sistema DEBE proveer observabilidad mediante logging y monitoreo.
 <!-- Fuente: ACC/Technical principles -->
 
-### V. Principios Adicionales del Equipo
-<!-- NOTA: estos 3 principios NO provienen de los 22 post-its auditados del
-     pipeline 7Cs (no cuentan en C=1.000). Son decisión explícita del equipo,
-     incorporada al comparar contra una constitution manual previa. -->
-- **P23 (Negocio)**: El sistema DEBE automatizar la gestión de reservas sin
-  reemplazar la toma de decisiones del administrador cuando esta requiera
-  validación humana.
-- **P24 (Arquitectura)**: El sistema DEBE operar, en esta iteración, sobre un
-  único canal de mensajería conversacional externo. No se desarrollarán
-  funcionalidades específicas para otros canales sin una actualización explícita
-  de las especificaciones.
-- **P25 (Arquitectura)**: La lógica de negocio NUNCA DEBE depender de un
-  proveedor específico de procesamiento conversacional externo; dicho proveedor
-  DEBE poder reemplazarse sin modificar las reglas de negocio.
-
 ## Restricciones Adicionales
 
 TODO(SECTION_2_CONTENT): el alcance concreto de esta entrega (funcionalidad
 representativa vs. sistema completo, integraciones específicas consideradas)
 se definirá en `/speckit-plan`, donde sí se admite nombrar tecnología concreta.
 No se completa aquí para mantener esta constitution libre de contaminación
-técnica, consistente con T=0 exigido por la auditoría del pipeline 7Cs.
+técnica, consistente con T=0 exigido por la auditoría del pipeline 7Cs, y para
+no incorporar contenido sin respaldo en `composed/prompt_constitution.md`.
 
 ## Flujo de Trabajo de Desarrollo
 
-- **Desarrollo guiado por especificaciones**: toda funcionalidad DEBE comenzar
-  con una especificación (`spec.md`) previamente validada; no se implementará
-  funcionalidad sin especificación aprobada.
-- **Implementación incremental**: cada iteración DEBE entregar una
-  funcionalidad pequeña, verificable y demostrable; se priorizan entregas
-  frecuentes sobre implementaciones extensas.
-- **Fuente única de verdad**: las decisiones funcionales se mantienen en las
-  especificaciones; la documentación NO DEBE duplicar información
-  innecesariamente entre README, Constitution, artefactos de Spec Kit y demás documentación del proyecto.
-- **Código simple**: se privilegian soluciones simples, legibles y fáciles de
-  mantener; se evita complejidad innecesaria.
-- **Calidad verificable**: toda funcionalidad implementada DEBE contar con
-  criterios de aceptación claramente definidos y mecanismos para verificar su
-  correcto funcionamiento.
-- **Trazabilidad**: toda implementación DEBE poder relacionarse con una
-  especificación, un plan de implementación, una tarea y un criterio de
-  aceptación.
-<!-- Fuente: metodología de equipo / Spec Kit, no post-its de canvas -->
+TODO(SECTION_3_CONTENT): el flujo de trabajo de desarrollo del equipo (proceso
+spec-driven, cadencia de entregas, revisión de calidad, etc.) no está
+respaldado por ningún post-it de `composed/prompt_constitution.md`. Se difiere
+para no inventar política de proceso no proporcionada por el pipeline 7Cs;
+puede incorporarse mediante una enmienda explícita del equipo.
 
 ## Governance
 
@@ -132,10 +109,10 @@ Los principios aquí definidos DEBEN permanecer estables durante la evolución
 del proyecto salvo enmienda explícita.
 
 Todo plan (`/speckit-plan`), especificación (`/speckit-specify`) y revisión de
-tareas DEBE verificar su alineación con los principios I-V antes de avanzar;
+tareas DEBE verificar su alineación con los principios I-IV antes de avanzar;
 cualquier desviación DEBE justificarse explícitamente en el artefacto
 correspondiente o elevarse como enmienda a esta constitución. La complejidad
 añadida que no derive de un principio aquí listado DEBE justificarse o
 eliminarse.
 
-**Version**: 1.0.0 | **Ratified**: TODO(RATIFICATION_DATE): fecha de ratificación original no provista | **Last Amended**: 2026-08-04
+**Version**: 2.0.0 | **Ratified**: TODO(RATIFICATION_DATE): fecha de ratificación original no provista | **Last Amended**: 2026-08-05
