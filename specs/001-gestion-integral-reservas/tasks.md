@@ -137,7 +137,7 @@ autorización, router base) que las 4 historias de "Gestión de profesionales" n
 - [X] T005 [P] Inicializar Alembic (migraciones) en `bw-backend/alembic/` (`env.py`,
   `script.py.mako`) y `bw-backend/alembic.ini`, apuntando a la `Base` de T004 (depende de T004) —
   Commit: `"chore(bw-backend): initialize Alembic migrations"`
-- [ ] T006 [P] Definir el modelo SQLAlchemy `Profesional` (tabla `profesionales`: `id`, `nombre`,
+- [X] T006 [P] Definir el modelo SQLAlchemy `Profesional` (tabla `profesionales`: `id`, `nombre`,
   `especialidades` — ver `data-model.md` §Profesionales y especialidades) y el schema Pydantic de
   salida `Profesional` en `bw-backend/src/models/profesional.py` (depende de T004) — Commit:
   `"feat(bw-backend): add Profesional SQLAlchemy model and output schema"`
