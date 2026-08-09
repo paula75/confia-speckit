@@ -273,7 +273,7 @@ US-002 primero.
 
 ### Implementation for User Story 3
 
-- [ ] T021 [US3] [AC:FR-BW-005] Implementar `ProfesionalService.modificar()` (reutiliza el schema de
+- [X] T021 [US3] [AC:FR-BW-005] Implementar `ProfesionalService.modificar()` (reutiliza el schema de
   T013, actualiza la fila en PostgreSQL vía la sesión de T004) en
   `bw-backend/src/services/profesional_service.py` (depende de T008, T013, T020; mismo archivo que
   T014/T017 → secuencial) — Commit: `"feat(bw-backend): implement modificar profesional service (US3)"`

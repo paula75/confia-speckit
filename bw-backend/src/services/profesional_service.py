@@ -30,3 +30,20 @@ class ProfesionalService:
         §Parte 1)."""
         registros = self.db.query(ProfesionalORM).order_by(ProfesionalORM.nombre).all()
         return [Profesional.model_validate(r) for r in registros]
+
+    def modificar(
+        self, profesional_id: uuid.UUID, input_: ProfesionalCreateInput, rol: str
+    ) -> Profesional:
+        """Modifica un profesional existente (FR-BW-005, variante modificar),
+        restringido al rol autorizado. Reutiliza el schema de entrada de `crear()`
+        (T012/data-model.md — el conjunto de campos editables es el mismo)."""
+        requerir_administrador_operacion(rol)
+
+        orm = self.db.get(ProfesionalORM, profesional_id)
+        if orm is None:
+            raise ValueError(f"Profesional {profesional_id} no encontrado")
+
+        orm.nombre = input_.nombre
+        self.db.commit()
+        self.db.refresh(orm)
+        return Profesional.model_validate(orm)
