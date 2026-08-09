@@ -152,7 +152,7 @@ autorización, router base) que las 4 historias de "Gestión de profesionales" n
 - [X] T009 [P] Registrar el router base `profesionales` (sin endpoints aún) en
   `bw-backend/src/api/profesionales.py` y montarlo en `bw-backend/src/main.py` (depende de T002) —
   Commit: `"chore(bw-backend): register profesionales router skeleton"`
-- [ ] T010 Implementar el fixture de pytest de sesión aislada de base de datos en
+- [X] T010 Implementar el fixture de pytest de sesión aislada de base de datos en
   `bw-backend/tests/conftest.py`: abre una transacción SQLAlchemy sobre el PostgreSQL de
   `docker-compose.yml`, vincula (`bind=`) el `Session` de cada test a esa transacción, y la revierte
   (`rollback()`) al finalizar el test, de modo que ningún test deja datos residuales para el
