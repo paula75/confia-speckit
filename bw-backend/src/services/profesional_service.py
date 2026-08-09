@@ -47,3 +47,9 @@ class ProfesionalService:
         self.db.commit()
         self.db.refresh(orm)
         return Profesional.model_validate(orm)
+
+    def exportar(self) -> list[Profesional]:
+        """FR-BW-037 "Persistir o entregar el dato exportado" — mismo mecanismo de
+        lectura que `listar()` (ver contracts/bw-data-exports.md: exporta el
+        conjunto completo actual de la entidad, sin filtros)."""
+        return self.listar()
