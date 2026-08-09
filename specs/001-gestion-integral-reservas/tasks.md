@@ -266,7 +266,7 @@ US-002 primero.
 
 ### Tests for User Story 3
 
-- [ ] T020 [P] [US3] [AC:FR-BW-005] Unit test: `ProfesionalService.modificar()` persiste el cambio en
+- [X] T020 [P] [US3] [AC:FR-BW-005] Unit test: `ProfesionalService.modificar()` persiste el cambio en
   PostgreSQL solo para el rol "Administrador de la operación" y lo rechaza para cualquier otro, en
   `bw-backend/tests/unit/test_profesional_update_service.py` (usa el fixture de sesión aislada de
   T010) — Commit: `"test(bw-backend): add modificar profesional authorization tests (US3)"`
