@@ -329,7 +329,7 @@ independiente.
   estar excluido de esta ejecución), y registrar el resultado en
   `specs/001-gestion-integral-reservas/validation-log.md` — Commit:
   `"docs(specs): record Gestión de profesionales (backend) quickstart validation"`
-- [ ] T028 Ejecutar el Coverage Audit: correr
+- [X] T028 Ejecutar el Coverage Audit: correr
   `specs/001-gestion-integral-reservas/scripts/verify_traceability.py` (T001) contra este archivo y
   confirmar que los 6 AC-IDs de la tabla "Coverage Audit" tienen ≥1 tarea asociada — Commit:
   `"chore(tasks): run coverage audit for Gestión de profesionales (backend)"`
