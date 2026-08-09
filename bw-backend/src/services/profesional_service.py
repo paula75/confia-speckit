@@ -23,3 +23,10 @@ class ProfesionalService:
         self.db.commit()
         self.db.refresh(orm)
         return Profesional.model_validate(orm)
+
+    def listar(self) -> list[Profesional]:
+        """Lectura directa a PostgreSQL (FR-BW-011); respalda "Profesionales Query
+        API" (FR-BW-031, servida por BW — ver contracts/bw-shared-internal-api.md
+        §Parte 1)."""
+        registros = self.db.query(ProfesionalORM).order_by(ProfesionalORM.nombre).all()
+        return [Profesional.model_validate(r) for r in registros]

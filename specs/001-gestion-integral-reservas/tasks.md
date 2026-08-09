@@ -233,7 +233,7 @@ y la ficha esperados, sin depender de que US-001 se haya ejecutado antes.
 
 ### Implementation for User Story 2
 
-- [ ] T017 [US2] [AC:FR-BW-011,FR-BW-031] Implementar `ProfesionalService.listar()` (lectura directa
+- [X] T017 [US2] [AC:FR-BW-011,FR-BW-031] Implementar `ProfesionalService.listar()` (lectura directa
   a PostgreSQL vía la sesión de T004 — ya no requiere adaptador externo, ver
   `contracts/bw-shared-internal-api.md` §Parte 1) en `bw-backend/src/services/profesional_service.py`
   (depende de T004, T016; mismo archivo que T014 → secuencial) — Commit:
