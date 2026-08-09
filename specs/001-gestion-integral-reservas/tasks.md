@@ -134,7 +134,7 @@ autorización, router base) que las 4 historias de "Gestión de profesionales" n
   `bw-backend/src/db/session.py` y la clase `Base` declarativa en `bw-backend/src/db/base.py`
   (`research.md` §"Motor de base de datos y herramientas de acceso a datos") (depende de T002, T003) —
   Commit: `"feat(bw-backend): add SQLAlchemy engine, session and declarative base"`
-- [ ] T005 [P] Inicializar Alembic (migraciones) en `bw-backend/alembic/` (`env.py`,
+- [X] T005 [P] Inicializar Alembic (migraciones) en `bw-backend/alembic/` (`env.py`,
   `script.py.mako`) y `bw-backend/alembic.ini`, apuntando a la `Base` de T004 (depende de T004) —
   Commit: `"chore(bw-backend): initialize Alembic migrations"`
 - [ ] T006 [P] Definir el modelo SQLAlchemy `Profesional` (tabla `profesionales`: `id`, `nombre`,
