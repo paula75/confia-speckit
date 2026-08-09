@@ -24,8 +24,15 @@ estricto") — este último resuelve, para el bundle BW, las elecciones de frame
 `composed/plan_input.md` dejaba genéricas ("Javascript", "Python") y que `research.md` había tratado
 como decisión de implementación abierta. No se usó ninguna otra fuente. Donde ninguna de las tres
 fuentes declaró nada y `spec.md` no lo diferió explícitamente a esta etapa (p. ej. metas de
-desempeño, umbrales de NFR, comportamiento ante fallo de FR-BW-044), se deja abierto — no se
-inventó.
+desempeño, umbrales de NFR), se deja abierto — no se inventó.
+
+**Re-sincronización (2026-08-08)**: esta ejecución de `/speckit.plan` también incorpora la sesión
+adicional de `/speckit.clarify` de la misma fecha (comportamiento ante fallo de FR-BW-029..034 y de
+FR-BW-044) y los hallazgos I1/U1/U2/G1/C1 de `/speckit.analyze` (mismo día): define los parámetros
+concretos de reintento que `spec.md` remitió a esta etapa, resuelve el tipo del campo
+`especialidades`, agrega el contrato de exportación de datos que faltaba
+(`contracts/bw-data-exports.md`), y agrega la justificación formal de P22 en §Complexity Tracking.
+No se agregó ninguna decisión no solicitada por esas fuentes.
 
 ## Summary
 
@@ -56,7 +63,10 @@ estricto. Nginx (declarado en el stack de BW; usado como frontera HTTP — servi
 enrutar hacia el backend). Cliente de Object Storage (declarado en el stack, para la entidad
 "Multimedia Web"). Decisión de diseño (ver `research.md`): librería de pruebas de frontend, porque
 ni el canvas ni `spec.md` ni el stack de esta ejecución la declaran — se documenta como decisión de
-plan, no como requisito.
+plan, no como requisito. La política de reintento del adaptador hacia el contrato compartido (T006)
+queda definida en `research.md` §"Política de reintento del contrato compartido" (máx. 3 intentos,
+backoff exponencial 1s/2s/4s) y §"Política de reintento y resincronización de FR-BW-044" (mismo
+backoff, resincronización por reconsulta tras 3 intentos fallidos o evento fuera de orden).
 
 **Storage**: Object Storage (declarado en el stack de BW, para "Multimedia Web"). BW **no** declara
 una base de datos relacional propia: los datos de negocio que administra (Ficha clientes,
@@ -106,11 +116,12 @@ el Principio V fue removido en la Etapa E por no tener respaldo en el pipeline).
 | P18 "Configuración antes que personalización" | Parcial | No hay suficiente información en `spec.md` para evaluarlo más allá de la estructura propuesta; no se fuerza una decisión no respaldada. |
 | P20 "Escalabilidad horizontal" | Sí | Backend Python sin estado detrás de Nginx, en contenedor Docker → admite réplicas horizontales sin cambio de diseño. |
 | P21 "Integración mediante adapters" | Sí | El acceso al contrato compartido se aísla en una capa de cliente/adaptador (ver `data-model.md` / `contracts/`), no llamadas dispersas. |
-| P22 "Observabilidad mediante logging y monitoreo" | Abierto | `spec.md` no declara requisitos de observabilidad para BW; no se inventa un mecanismo concreto — queda como brecha reportada, no resuelta aquí. |
+| P22 "Observabilidad mediante logging y monitoreo" | Abierto (justificado) | `spec.md` no declara requisitos de observabilidad para BW; no se inventa un mecanismo concreto. Justificación formal en §Complexity Tracking, requerida por Governance de la constitution para cualquier principio no resuelto. |
 | P1-P8, P10-P12, P14-P15, P19 | No aplican directamente a un solo bundle backend/frontend administrativo (son de estrategia de negocio/TI o de todo el sistema) | Sin conflicto detectado. |
 
-**Resultado**: PASA. Ninguna decisión de este plan contradice un principio de la Constitution.
-No se requiere tabla de Complexity Tracking (sin violaciones que justificar).
+**Resultado**: PASA. Ninguna decisión de este plan contradice un principio de la Constitution. P22
+permanece abierto por falta de requisito respaldatorio (ni FR ni NFR de BW lo declara); ver
+§Complexity Tracking para su justificación formal.
 
 ## Project Structure
 
@@ -123,7 +134,8 @@ specs/001-gestion-integral-reservas/
 ├── data-model.md         # Fase 1 — entidades de BW
 ├── quickstart.md        # Fase 1 — guía de validación end-to-end de BW
 ├── contracts/
-│   └── bw-shared-internal-api.md   # Fase 1 — contrato compartido con AC/BA (FR-BW-029..034)
+│   ├── bw-shared-internal-api.md   # Fase 1 — contrato compartido con AC/BA (FR-BW-029..034)
+│   └── bw-data-exports.md          # Fase 1 — exportación de datos de BW (FR-BW-035..039; agregado en la re-sincronización 2026-08-08)
 └── tasks.md             # Fase 2 — NO generado por /speckit-plan
 ```
 
@@ -163,4 +175,10 @@ por `bundle-scope.md`.
 
 ## Complexity Tracking
 
-*Sin violaciones de la Constitution que requieran justificación (ver Constitution Check: PASA).*
+| Principio | Estado | Justificación |
+|---|---|---|
+| P22 "Observabilidad mediante logging y monitoreo" | Abierto — no resuelto en este plan | `spec.md` no declara ningún requisito (FR ni NFR) de logging/monitoreo para BW, y ningún canvas de origen lo aportó. Inventar un mecanismo concreto (librería de logging, formato de log, destino de métricas) sin un requisito que lo respalde violaría la restricción de esta etapa de no inventar decisiones no respaldadas por la Specification. Se documenta como brecha explícita — detectada por `/speckit.analyze` (hallazgo C1) — para resolverse mediante una decisión de producto/negocio explícita (p. ej. una sesión de `/speckit.clarify` que declare el requisito) antes de `/speckit.implement`, no inventándola aquí. |
+
+Ninguna otra decisión de este plan contradice un principio de la Constitution (P9, P13, P16/P17,
+P20 y P21 cumplen según la tabla de Constitution Check; P18 permanece "Parcial" por evaluación
+insuficiente, no por violación, y no requiere entrada en esta tabla).

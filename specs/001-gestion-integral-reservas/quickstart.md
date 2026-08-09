@@ -38,8 +38,12 @@ Backend Agendamiento salvo como dependencia simulada (mock) del contrato compart
    "desde Backend Agendamiento".
 3. **Resultado esperado**: `bw-backend` aplica el cambio de inmediato (disparador en tiempo real
    aclarado para FR-BW-044 en `spec.md` §Clarifications), sin esperar un sondeo periódico.
-4. **Fuera de alcance de esta validación**: comportamiento ante fallo del evento (reintentos,
-   pérdida) — sigue como `[NEEDS CLARIFICATION]`, no hay nada que validar todavía.
+4. **Comportamiento ante fallo del evento** (resuelto, Clarifications Sesión 2026-08-08 +
+   `research.md` §"Política de reintento y resincronización de FR-BW-044"): con el doble de prueba,
+   simular una falla al procesar el evento (p. ej. forzar una excepción) y verificar que `bw-backend`
+   reintenta hasta 3 veces; luego simular que el evento se pierde definitivamente y verificar que
+   `bw-backend` invoca `GET /internal/disponibilidad` para resincronizar el rango afectado en vez de
+   quedar desactualizado indefinidamente.
 
 ## Escenario 4 — Modificar datos de un cliente (FR-BW-008)
 

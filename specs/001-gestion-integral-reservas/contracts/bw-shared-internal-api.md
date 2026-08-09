@@ -67,11 +67,15 @@ del contrato.
 - **Decisión de diseño**: se estandariza un único formato de error para las 6 operaciones porque
   las 6 comparten la misma API (aclarado en `spec.md`); un formato distinto por operación
   introduciría inconsistencia sin ningún requisito que la exija.
-- **Comportamiento ante fallo (timeouts, reintentos, orden de eventos)**: `// NO RESUELTO AQUÍ`.
-  `spec.md` no diferió este aspecto a `/speckit.plan` — sigue como `[NEEDS CLARIFICATION]` en la
-  especificación oficial (ver `research.md` §"Fuera de alcance de esta investigación"). BW debe
-  propagar el `error.code` recibido sin asumir una política de reintento hasta que esa duda se
-  resuelva.
+- **Comportamiento ante fallo (timeouts, errores del contrato)**: resuelto (`spec.md`
+  §Clarifications, Sesión 2026-08-08 + `research.md` §"Política de reintento del contrato
+  compartido"). Ante timeout o respuesta de error, BW reintenta automáticamente hasta 3 veces con
+  backoff exponencial (1s, 2s, 4s). Si los 3 intentos fallan, BW propaga el `error.code` recibido al
+  llamador (frontend o servicio interno de BW) sin más reintentos automáticos.
+- **Orden de eventos**: no aplica a las operaciones de este contrato — las 6 son query/command
+  síncronas request-response, no eventos. El comportamiento ante eventos fuera de orden se define
+  para FR-BW-044 en `research.md` §"Política de reintento y resincronización de FR-BW-044", no en
+  este contrato.
 
 ## Trazabilidad
 

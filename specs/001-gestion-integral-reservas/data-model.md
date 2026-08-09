@@ -77,7 +77,7 @@ Usada por: FR-BW-003 (input "Datos de profesionales"), FR-BW-005 (crear/modifica
 |---|---|---|
 | `id` | identificador | Requerido para "Crear/Modificar profesional" (FR-BW-005) |
 | `nombre` | string | "Datos de profesionales" (FR-BW-003) |
-| `especialidades` | lista de string/referencia a Catálogo de servicios | El nombre de la entidad ("Profesionales **y especialidades**") exige el campo; no se declara si es texto libre o referencia al catálogo — `// TBD` |
+| `especialidades` | `list[str]` (texto libre) | El nombre de la entidad ("Profesionales **y especialidades**") exige el campo. Resuelto como texto libre, no referencia a `Catálogo de servicios` — ver `research.md` §"Tipo del campo especialidades" (re-sincronización 2026-08-08); ningún FR-BW declara esa relación. |
 
 ## Entidades externas consumidas (no propiedad de BW — esquema no se define aquí)
 
