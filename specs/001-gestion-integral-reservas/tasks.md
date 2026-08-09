@@ -198,7 +198,7 @@ esta ejecución — ver "Nota de alcance: backend sin frontend").
   entrada `ProfesionalCreateInput` (campo requerido `nombre` — motivado por FR-BW-004/§data-model.md)
   (depende de T006, T011; mismo archivo que T006 → secuencial) — Commit:
   `"feat(bw-backend): add ProfesionalCreateInput schema (US1)"`
-- [ ] T014 [US1] [AC:FR-BW-005] Implementar `ProfesionalService.crear()` (valida rol vía T008,
+- [X] T014 [US1] [AC:FR-BW-005] Implementar `ProfesionalService.crear()` (valida rol vía T008,
   persiste la fila en PostgreSQL usando la sesión de T004/T010) en
   `bw-backend/src/services/profesional_service.py` (depende de T004, T008, T012, T013) — Commit:
   `"feat(bw-backend): implement crear profesional service (US1)"`
