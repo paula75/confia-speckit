@@ -226,7 +226,7 @@ y la ficha esperados, sin depender de que US-001 se haya ejecutado antes.
 
 ### Tests for User Story 2
 
-- [ ] T016 [P] [US2] [AC:FR-BW-011,FR-BW-031] Unit test: `ProfesionalService.listar()` consulta
+- [X] T016 [P] [US2] [AC:FR-BW-011,FR-BW-031] Unit test: `ProfesionalService.listar()` consulta
   directamente la tabla `profesionales` en PostgreSQL y devuelve el listado completo, en
   `bw-backend/tests/unit/test_profesional_query_service.py` (usa el fixture de sesión aislada de
   T010) — Commit: `"test(bw-backend): add profesionales query tests against postgres (US2)"`
