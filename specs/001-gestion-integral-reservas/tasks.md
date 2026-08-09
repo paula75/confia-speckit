@@ -141,7 +141,7 @@ autorización, router base) que las 4 historias de "Gestión de profesionales" n
   `especialidades` — ver `data-model.md` §Profesionales y especialidades) y el schema Pydantic de
   salida `Profesional` en `bw-backend/src/models/profesional.py` (depende de T004) — Commit:
   `"feat(bw-backend): add Profesional SQLAlchemy model and output schema"`
-- [ ] T007 Generar la migración inicial de Alembic para la tabla `profesionales` en
+- [X] T007 Generar la migración inicial de Alembic para la tabla `profesionales` en
   `bw-backend/alembic/versions/`, y aplicarla contra el PostgreSQL de `docker-compose.yml`
   (`alembic upgrade head`), verificando que la tabla `profesionales` existe (depende de T003, T005,
   T006) — Commit: `"chore(bw-backend): add and apply initial alembic migration for profesionales table"`
