@@ -1,0 +1,31 @@
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: bw
+      POSTGRES_PASSWORD: bw
+      POSTGRES_DB: bw
+    ports:
+      - "5432:5432"
+    volumes:
+      - bw_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bw -d bw"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build: .
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql+psycopg://bw:bw@db:5432/bw
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  bw_postgres_data:

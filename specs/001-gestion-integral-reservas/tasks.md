@@ -116,7 +116,7 @@ instrucción explícita de `prompts/etapa-j-tasks.md`).
   `tests/unit/`, `requirements.txt`/`pyproject.toml`, configuración de lint/format (ruff + black), y
   entrypoint `bw-backend/src/main.py` (depende de T001, por instrucción explícita de esta ejecución
   de completar primero el verificador de trazabilidad) — Commit: `"chore(bw-backend): scaffold FastAPI project structure"`
-- [ ] T003 [P] Dockerizar el backend: `bw-backend/Dockerfile` (imagen del servicio FastAPI) y
+- [X] T003 [P] Dockerizar el backend: `bw-backend/Dockerfile` (imagen del servicio FastAPI) y
   `bw-backend/docker-compose.yml` (orquesta `bw-backend` + contenedor PostgreSQL con la imagen
   oficial `postgres`, ambos declarados explícitamente en `prompts/etapa-i-plan.md` §Stack) (depende
   de T002) — Commit: `"chore(bw-backend): add Dockerfile and docker-compose with postgres service"`
