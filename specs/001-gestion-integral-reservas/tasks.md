@@ -309,7 +309,7 @@ el conjunto completo de datos de "Profesionales y especialidades".
 - [X] T024 [US4] [AC:FR-BW-037] Implementar `ProfesionalService.exportar()` en
   `bw-backend/src/services/profesional_service.py` (depende de T017, T023; mismo archivo que
   T014/T017/T021 → secuencial) — Commit: `"feat(bw-backend): implement exportar profesionales service (US4)"`
-- [ ] T025 [US4] [AC:FR-BW-037] Implementar el endpoint `GET /profesionales/export` en
+- [X] T025 [US4] [AC:FR-BW-037] Implementar el endpoint `GET /profesionales/export` en
   `bw-backend/src/api/profesionales.py` (depende de T022, T024; mismo archivo que
   T015/T018/T019/T022 → secuencial) — Commit: `"feat(bw-backend): add GET /profesionales/export endpoint (US4)"`
 

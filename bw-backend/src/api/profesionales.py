@@ -66,6 +66,14 @@ def listar_profesionales(db: Session = Depends(get_db)) -> list[Profesional]:
     return ProfesionalService(db).listar()
 
 
+@router.get("/export", response_model=list[Profesional])
+def exportar_profesionales(db: Session = Depends(get_db)) -> list[Profesional]:
+    """FR-BW-037 "Persistir o entregar el dato exportado" — ver
+    contracts/bw-data-exports.md. Debe registrarse antes de `/{profesional_id}`
+    para que "export" no se intente interpretar como un UUID."""
+    return ProfesionalService(db).exportar()
+
+
 @router.get("/{profesional_id}", response_model=Profesional)
 def obtener_profesional(profesional_id: uuid.UUID, db: Session = Depends(get_db)) -> Profesional:
     """FR-BW-025 "Mostrar o notificar Ficha Profesionales" (ficha individual)."""
