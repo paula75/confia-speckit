@@ -32,6 +32,12 @@ En particular:
 - diseñar únicamente los requisitos no funcionales aplicables al bundle;
 - utilizar los demás bundles únicamente como dependencias arquitectónicas cuando exista una referencia explícita desde el bundle seleccionado.
 
+## Stack
+- Backend usa python con el framework FastAPI
+- Se incluyen test unitarios en backend
+- Frontend usa React con typescript estricto
+
+
 ## Restricciones
 
 - No diseñar funcionalidades pertenecientes exclusivamente a otros bundles.

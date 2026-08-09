@@ -1,6 +1,6 @@
 # Implementation Plan: Gestión Integral de Reservas — Bundle Backend/Frontend Web (BW)
 
-**Branch**: `001-gestion-integral-reservas` | **Date**: 2026-08-05 | **Spec**: [spec.md](./spec.md)
+**Branch**: `001-gestion-integral-reservas` | **Date**: 2026-08-08 | **Spec**: [spec.md](./spec.md)
 
 **Input**: Feature specification from `/specs/001-gestion-integral-reservas/spec.md`, restringida
 al bundle Backend/Frontend Web (BW) por `/specs/001-gestion-integral-reservas/bundle-scope.md`.
@@ -11,38 +11,52 @@ al bundle Backend/Frontend Web (BW) por `/specs/001-gestion-integral-reservas/bu
 compartido en FR-BW-029 a FR-BW-034; evento de agenda de FR-BW-044; eventos conversacionales de
 FR-BW-016 a FR-BW-018). No se diseñó ninguna funcionalidad exclusiva de AC o BA.
 
-**Nota de fuentes**: el contexto técnico de esta sección proviene de dos lugares: (1) decisiones de
+**Nota de fuentes**: el contexto técnico de esta sección proviene de tres lugares: (1) decisiones de
 diseño nuevas, tomadas aquí porque `spec.md` difiere explícitamente "el contexto técnico" y el
 "esquema técnico" de los contratos compartidos y de 4 entidades a `/speckit.plan` (ver
 `## Clarifications` y el pie de página de `spec.md`); (2) el stack ya declarado para el bundle
 "Backend/Frontend Web" en `composed/plan_input.md` §"Contexto por bundle (Functional)", al cual el
 propio pie de `spec.md` remite ("el contexto técnico se entrega por separado en /speckit.plan (ver
-composed/plan_input.md)"). No se usó ninguna otra fuente. Donde el canvas no declaró nada y
-`spec.md` no lo diferió explícitamente a esta etapa (p. ej. metas de desempeño, umbrales de NFR,
-comportamiento ante fallo de FR-BW-044), se deja abierto — no se inventó.
+composed/plan_input.md)"); (3) el stack técnico concreto indicado explícitamente como entrada de
+esta ejecución de `/speckit.plan` (`prompts/etapa-i-plan.md` §Stack: "Backend usa python con el
+framework FastAPI", "Se incluyen test unitarios en backend", "Frontend usa React con typescript
+estricto") — este último resuelve, para el bundle BW, las elecciones de framework/lenguaje que
+`composed/plan_input.md` dejaba genéricas ("Javascript", "Python") y que `research.md` había tratado
+como decisión de implementación abierta. No se usó ninguna otra fuente. Donde ninguna de las tres
+fuentes declaró nada y `spec.md` no lo diferió explícitamente a esta etapa (p. ej. metas de
+desempeño, umbrales de NFR, comportamiento ante fallo de FR-BW-044), se deja abierto — no se
+inventó.
 
 ## Summary
 
 El bundle Backend/Frontend Web es el portal administrativo del sistema de "Gestión integral de
 Reservas": permite crear/modificar profesionales, servicios y agenda, y modificar datos de
 clientes (FR-BW-001 a FR-BW-044), restringido en esta etapa al rol "Administrador de la operación"
-(aclarado en `spec.md` §Clarifications). Enfoque técnico: aplicación web con frontend en
-JavaScript y backend en Python, ambos declarados para este bundle en `composed/plan_input.md`;
-persistencia de negocio delegada al contrato de API interna que `spec.md` aclaró como compartido
-con Backend Agendamiento (Disponibilidad/Servicios/Profesionales Query API y Crear/Actualizar/
-Cancelar Reserva Command API); Object Storage propio para la entidad "Multimedia Web".
+(aclarado en `spec.md` §Clarifications). Enfoque técnico: aplicación web con frontend en React +
+TypeScript estricto y backend en Python + FastAPI (lenguajes declarados para este bundle en
+`composed/plan_input.md`; frameworks concretos y tipado estricto declarados explícitamente como
+entrada de esta ejecución de `/speckit.plan`, ver `prompts/etapa-i-plan.md` §Stack); persistencia
+de negocio delegada al contrato de API interna que `spec.md` aclaró como compartido con Backend
+Agendamiento (Disponibilidad/Servicios/Profesionales Query API y Crear/Actualizar/Cancelar Reserva
+Command API); Object Storage propio para la entidad "Multimedia Web".
 
 ## Technical Context
 
-**Language/Version**: Frontend: JavaScript (versión no especificada por el canvas ni por
-`spec.md`). Backend: Python (versión no especificada). Ambos declarados en `composed/plan_input.md`
-§Bundle "Backend/Frontend Web" → Stack declarado.
+**Language/Version**: Frontend: TypeScript en modo estricto (`strict: true`), sobre React
+(framework declarado explícitamente en `prompts/etapa-i-plan.md` §Stack: "Frontend usa React con
+typescript estricto"; versión no especificada). Backend: Python con FastAPI (framework declarado
+explícitamente en `prompts/etapa-i-plan.md` §Stack: "Backend usa python con el framework FastAPI";
+versión de Python no especificada). El lenguaje base (JavaScript/Python) ya estaba declarado en
+`composed/plan_input.md` §Bundle "Backend/Frontend Web" → Stack declarado; esta ejecución concreta
+el framework y, en el caso del frontend, el modo de tipado.
 
-**Primary Dependencies**: Nginx (declarado en el stack de BW; usado como frontera HTTP —
-servir el frontend y enrutar hacia el backend). Cliente de Object Storage (declarado en el stack,
-para la entidad "Multimedia Web"). Decisión de diseño (ver `research.md`): frameworks concretos de
-frontend/backend y librería de pruebas, porque `spec.md` no los declara y su elección no está
-respaldada por ningún requisito — se documentan como decisión de plan, no como requisito.
+**Primary Dependencies**: FastAPI (backend, declarado explícitamente para esta ejecución) con su
+servidor ASGI estándar (uvicorn). React (frontend, declarado explícitamente) con TypeScript en modo
+estricto. Nginx (declarado en el stack de BW; usado como frontera HTTP — servir el frontend y
+enrutar hacia el backend). Cliente de Object Storage (declarado en el stack, para la entidad
+"Multimedia Web"). Decisión de diseño (ver `research.md`): librería de pruebas de frontend, porque
+ni el canvas ni `spec.md` ni el stack de esta ejecución la declaran — se documenta como decisión de
+plan, no como requisito.
 
 **Storage**: Object Storage (declarado en el stack de BW, para "Multimedia Web"). BW **no** declara
 una base de datos relacional propia: los datos de negocio que administra (Ficha clientes,
@@ -51,8 +65,11 @@ través del contrato de API interno compartido con Backend Agendamiento (FR-BW-0
 FR-BW-029 a FR-BW-034, aclarado en `spec.md` §Clarifications). Ver `data-model.md` para el detalle
 de qué entidades son propias de BW (Multimedia Web) y cuáles son leídas de un contrato externo.
 
-**Testing**: NEEDS CLARIFICATION → resuelto en `research.md` (decisión de diseño; ningún canvas ni
-`spec.md` declara un framework de pruebas).
+**Testing**: Backend: pruebas unitarias con pytest (declarado explícitamente en
+`prompts/etapa-i-plan.md` §Stack: "Se incluyen test unitarios en backend"). Frontend: sin
+framework de pruebas declarado explícitamente → resuelto como decisión de diseño en `research.md`
+(ningún canvas, `spec.md` ni el stack de esta ejecución declaran un framework de pruebas de
+frontend).
 
 **Target Platform**: Aplicación web (navegador + servidor), contenedorizada con Docker (declarado
 en el stack de BW).
@@ -113,29 +130,36 @@ specs/001-gestion-integral-reservas/
 ### Source Code (repository root)
 
 ```text
-bw-frontend/
+bw-frontend/                # React + TypeScript estricto (tsconfig: "strict": true)
 ├── src/
 │   ├── pages/          # Vistas administrativas: profesionales, servicios, agenda, clientes, dashboard
 │   ├── components/
+│   ├── types/           # Interfaces TS de las entidades de data-model.md y del contrato compartido
 │   └── services/        # Cliente HTTP hacia bw-backend
-└── tests/
+├── tests/               # Framework de pruebas: decisión abierta, ver research.md
+└── tsconfig.json         # "strict": true (declarado explícitamente para esta ejecución)
 
-bw-backend/
+bw-backend/                 # Python + FastAPI
 ├── src/
-│   ├── models/          # Multimedia Web (propio); DTOs de lectura para Ficha clientes,
-│   │                     # Disponibilidad Agenda, Catálogo de servicios, Profesionales y
+│   ├── models/          # Esquemas Pydantic: Multimedia Web (propio); DTOs de lectura para Ficha
+│   │                     # clientes, Disponibilidad Agenda, Catálogo de servicios, Profesionales y
 │   │                     # especialidades (ver data-model.md — no son tablas propias de BW)
 │   ├── services/
 │   ├── adapters/        # Cliente hacia el contrato de API interna compartido (FR-BW-029..034)
-│   └── api/             # Endpoints que expone BW a bw-frontend
+│   └── api/             # Routers FastAPI que expone BW a bw-frontend
 └── tests/
+    └── unit/             # Pruebas unitarias con pytest (declarado explícitamente para esta ejecución)
 ```
 
 **Structure Decision**: Web application con frontend y backend separados (`bw-frontend/`,
-`bw-backend/`), siguiendo el stack declarado para el bundle BW (JavaScript + Python) y aislando el
-acceso al contrato compartido con AC/BA detrás de una capa `adapters/` (Principio P21). No se
-reutilizan ni se crean directorios para los bundles AC o BA: quedan fuera del alcance de esta
-etapa por `bundle-scope.md`.
+`bw-backend/`), siguiendo el stack declarado para el bundle BW (React + TypeScript estricto sobre
+JavaScript; FastAPI sobre Python — lenguajes base de `composed/plan_input.md`, frameworks y modo de
+tipado declarados explícitamente en `prompts/etapa-i-plan.md` §Stack) y aislando el acceso al
+contrato compartido con AC/BA detrás de una capa `adapters/` (Principio P21). Las pruebas unitarias
+de backend (`bw-backend/tests/unit/`, pytest) están declaradas explícitamente para esta ejecución;
+no se declara explícitamente un framework de pruebas de frontend (ver `research.md`). No se
+reutilizan ni se crean directorios para los bundles AC o BA: quedan fuera del alcance de esta etapa
+por `bundle-scope.md`.
 
 ## Complexity Tracking
 

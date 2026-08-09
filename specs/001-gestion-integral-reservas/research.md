@@ -1,7 +1,7 @@
 # Phase 0 Research: Bundle Backend/Frontend Web (BW)
 
 **Feature**: Gestión Integral de Reservas | **Bundle**: Backend/Frontend Web (alcance por
-`bundle-scope.md`) | **Fecha**: 2026-08-05
+`bundle-scope.md`) | **Fecha**: 2026-08-08
 
 Alcance de esta investigación: únicamente las decisiones de diseño que `spec.md` difirió
 explícitamente a `/speckit.plan` (esquema técnico de los contratos compartidos FR-BW-029..034,
@@ -14,40 +14,54 @@ listan en "Fuera de alcance de esta investigación" al final, en vez de inventar
 
 ## Decisión: Framework de frontend
 
-- **Decision**: React (o un framework de componentes equivalente) sobre JavaScript.
-- **Rationale**: `composed/plan_input.md` declara "Javascript" como stack de BW pero no un
-  framework específico. Se requiere una capa de componentes para las 5 vistas administrativas de
-  FR-BW-022 a FR-BW-028 (dashboard, agenda, fichas de cliente/profesional, confirmaciones) más los
-  4 formularios de FR-BW-005 a FR-BW-008. Un framework de componentes de mercado reduce trabajo
-  respecto de JavaScript sin librería, sin contradecir ningún requisito (la elección exacta de
-  framework no está respaldada por ningún FR, así que es una decisión de implementación, no de
-  negocio).
-- **Alternatives considered**: JavaScript "vanilla" con plantillas server-side (se descartó por
-  no aportar valor frente a un framework de componentes estándar para un panel administrativo con
-  varias vistas con estado); otro framework de componentes (intercambiable sin impacto en
-  `spec.md` — no se fija una única opción como requisito, ver `plan.md` §Technical Context).
+- **Decision**: React con TypeScript en modo estricto sobre JavaScript.
+- **Rationale**: `composed/plan_input.md` declara "Javascript" como stack de BW; el framework
+  concreto (React) y el modo de tipado (TypeScript estricto) están declarados explícitamente como
+  entrada de esta ejecución de `/speckit.plan` (`prompts/etapa-i-plan.md` §Stack: "Frontend usa
+  React con typescript estricto"), por lo que dejan de ser una decisión abierta de implementación.
+  Se requiere una capa de componentes para las 5 vistas administrativas de FR-BW-022 a FR-BW-028
+  (dashboard, agenda, fichas de cliente/profesional, confirmaciones) más los 4 formularios de
+  FR-BW-005 a FR-BW-008; React cubre ese requisito.
+- **Alternatives considered**: no aplica — el framework y el modo de tipado están fijados
+  explícitamente para esta ejecución, no son una elección abierta entre alternativas.
 
 ## Decisión: Framework de backend
 
-- **Decision**: Un framework web de Python orientado a APIs REST (p. ej. FastAPI o equivalente).
-- **Rationale**: "Python" está declarado como stack de BW en `composed/plan_input.md`. BW expone
-  endpoints propios hacia `bw-frontend` y consume el contrato compartido con AC/BA (FR-BW-029 a
-  FR-BW-034) — un framework de APIs REST encaja directamente sin decisiones adicionales no
-  respaldadas.
-- **Alternatives considered**: Framework full-stack con renderizado server-side (se descartó
-  porque el frontend ya está separado por decisión de Structural Canvas — "Pagina web admin
-  locales" como bundle de frontend distinto del backend).
+- **Decision**: FastAPI sobre Python.
+- **Rationale**: "Python" está declarado como stack de BW en `composed/plan_input.md`; el
+  framework concreto (FastAPI) está declarado explícitamente como entrada de esta ejecución de
+  `/speckit.plan` (`prompts/etapa-i-plan.md` §Stack: "Backend usa python con el framework
+  FastAPI"), por lo que deja de ser una decisión abierta de implementación. BW expone endpoints
+  propios hacia `bw-frontend` y consume el contrato compartido con AC/BA (FR-BW-029 a FR-BW-034) —
+  FastAPI, orientado a APIs REST tipadas, encaja directamente.
+- **Alternatives considered**: no aplica — el framework está fijado explícitamente para esta
+  ejecución, no es una elección abierta entre alternativas.
+
+## Decisión: Modo de tipado estricto en frontend (TypeScript)
+
+- **Decision**: `tsconfig.json` de `bw-frontend` con `"strict": true` (habilita, entre otras,
+  `strictNullChecks`, `noImplicitAny`).
+- **Rationale**: Declarado explícitamente como entrada de esta ejecución de `/speckit.plan`
+  (`prompts/etapa-i-plan.md` §Stack: "Frontend usa React con typescript estricto"). Los tipos de
+  las entidades diferidas por `spec.md` §Clarifications (ver `data-model.md`, varios campos
+  `// TBD`) deben modelarse en TS de forma explícita en vez de con `any`, para que el modo estricto
+  sea consistente con el resto del código.
+- **Alternatives considered**: no aplica — el modo estricto está fijado explícitamente para esta
+  ejecución.
 
 ## Decisión: Framework de pruebas
 
-- **Decision**: pytest para `bw-backend`; un runner de pruebas de componentes estándar de
-  JavaScript (p. ej. Vitest/Jest) para `bw-frontend`.
-- **Rationale**: Ningún canvas ni `spec.md` declara herramienta de pruebas (`Testing: NEEDS
-  CLARIFICATION` en el template de plan). Es una decisión de implementación pura, sin impacto en
-  ningún requisito funcional — se resuelve aquí en vez de dejarla abierta, porque bloquearía
-  cualquier verificación de las tareas de implementación futuras.
-- **Alternatives considered**: unittest (Python) — se prefiere pytest por convención de mercado;
-  sin impacto en requisitos.
+- **Decision**: Backend: pytest para `bw-backend/tests/unit/`. Frontend: `bw-backend` tiene
+  pruebas unitarias declaradas explícitamente para esta ejecución (`prompts/etapa-i-plan.md`
+  §Stack: "Se incluyen test unitarios en backend"); `bw-frontend` no tiene un framework de pruebas
+  declarado explícitamente por ninguna fuente — se deja como decisión abierta de implementación:
+  un runner de pruebas de componentes estándar de TypeScript/React (p. ej. Vitest/Jest) sería
+  compatible con el stack, pero no se fija aquí como requisito.
+- **Rationale**: Para el backend, pytest resuelve directamente la exigencia explícita de pruebas
+  unitarias. Para el frontend, ni el canvas, ni `spec.md`, ni el stack de esta ejecución declaran
+  una herramienta de pruebas — no se inventa una obligación de pruebas de frontend que nadie pidió.
+- **Alternatives considered**: unittest (Python) — se prefiere pytest por convención de mercado y
+  por ser el runner estándar para proyectos FastAPI; sin impacto en requisitos.
 
 ## Decisión: Esquema del contrato de API interna compartido (FR-BW-029 a FR-BW-034)
 

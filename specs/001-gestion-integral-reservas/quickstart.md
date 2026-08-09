@@ -6,11 +6,12 @@ Backend Agendamiento salvo como dependencia simulada (mock) del contrato compart
 
 ## Prerrequisitos
 
-- `bw-backend` corriendo localmente (Python, ver `plan.md` §Technical Context) con un doble de
-  prueba (mock/stub) del contrato `contracts/bw-shared-internal-api.md` en lugar de una conexión
-  real a Backend Agendamiento — el contrato real entre bundles no se implementa en esta etapa.
-- `bw-frontend` corriendo localmente (JavaScript, ver `plan.md` §Technical Context) apuntando a
-  `bw-backend`.
+- `bw-backend` corriendo localmente (Python + FastAPI, ver `plan.md` §Technical Context) con un
+  doble de prueba (mock/stub) del contrato `contracts/bw-shared-internal-api.md` en lugar de una
+  conexión real a Backend Agendamiento — el contrato real entre bundles no se implementa en esta
+  etapa.
+- `bw-frontend` corriendo localmente (React + TypeScript estricto, ver `plan.md` §Technical
+  Context) apuntando a `bw-backend`.
 - Una sesión autenticada con el rol "Administrador de la operación" (único rol autorizado para las
   4 acciones administrativas de BW, aclarado en `spec.md` §Clarifications). Este quickstart no
   cubre el mecanismo de autenticación en sí: `spec.md` no lo declara (permisos de los demás roles
@@ -52,6 +53,13 @@ Backend Agendamiento salvo como dependencia simulada (mock) del contrato compart
 2. **Resultado esperado**: la acción debe rechazarse. `spec.md` no define el código/mensaje de
    rechazo (ver `checklists/bw-requirements.md` CHK013) — este quickstart valida solo que la
    acción NO se ejecuta, no la forma exacta del rechazo.
+
+## Pruebas unitarias de backend
+
+`bw-backend` incluye pruebas unitarias con pytest (`bw-backend/tests/unit/`, declarado
+explícitamente en `prompts/etapa-i-plan.md` §Stack). Este quickstart valida el flujo end-to-end
+manualmente; la ejecución de `pytest` sobre `bw-backend/tests/unit/` es el mecanismo de
+verificación automatizada de la lógica de backend y se define en `/speckit.tasks`, no aquí.
 
 ## Fuera de alcance de este quickstart
 
