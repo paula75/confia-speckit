@@ -72,8 +72,10 @@ Proveer "Gestión integral de Reservas".
 - "Administrador de la operación": permisos no declarados en general. Aclarado (Clarifications,
   Sesión 2026-08-05) exclusivamente para el bundle Backend/Frontend Web: es el único rol autorizado
   a ejecutar las 4 acciones administrativas de BW (crear/modificar profesional, crear/modificar
-  servicios, modificar agenda, modificar datos de clientes — FR-BW-005 a FR-BW-008). Sus permisos
-  fuera de BW siguen sin declararse. [NEEDS CLARIFICATION: permisos por rol no declarados en el canvas fuera del alcance de BW]
+  servicios, modificar agenda, modificar datos de clientes — FR-BW-005 a FR-BW-008). El actor
+  organizacional (§Contexto → Actores organizacionales) que ejerce este rol es "Administrador del
+  centro" (aclarado en Clarifications, Sesión 2026-08-08). Sus permisos fuera de BW siguen sin
+  declararse. [NEEDS CLARIFICATION: permisos por rol no declarados en el canvas fuera del alcance de BW]
 - "Coordinador de agenda": permisos no declarados. Dentro del alcance de BW, esta sesión de
   clarificación determinó que este rol NO tiene permiso para las 4 acciones administrativas de BW
   (ver "Administrador de la operación" arriba); sus permisos en el resto del sistema siguen sin
@@ -127,6 +129,24 @@ nota de dependencia, sin resolver ni tocar sus FR.
   y especialidades, Disponibilidad Agenda) no tienen ningún atributo declarado. ¿Cómo tratar esa
   falta de esquema en esta etapa? → A: Diferir explícitamente la definición de atributos a
   `/speckit.plan`; no se inventan atributos en esta especificación.
+
+### Session 2026-08-08
+
+- Q: ¿Qué actor organizacional ejerce el rol "Administrador de la operación", el único autorizado
+  para las 4 acciones administrativas de BW (crear/modificar profesional, crear/modificar
+  servicios, modificar agenda, modificar datos de clientes)? → A: "Administrador del centro"
+  (§Contexto → Actores organizacionales).
+- Q: Cuando el contrato de API interna compartido (FR-BW-029 a FR-BW-034) no está disponible o
+  devuelve un error, ¿qué debe hacer Backend/Frontend Web? → A: Reintentar automáticamente.
+- Q: Si el evento de cambio de agenda de FR-BW-044 falla, llega fuera de orden, o se pierde, ¿cómo
+  debe comportarse BW? → A: Reintentar y, si el evento se pierde definitivamente, resincronizar
+  reconsultando el estado completo mediante la Disponibilidad Query API.
+- Q: ¿Debe BW incluir requisitos funcionales explícitos para gestionar (subir/consultar/eliminar)
+  la entidad "Multimedia Web" en esta iteración, o queda fuera de alcance por ahora? → A: Fuera de
+  alcance por ahora; no se agrega ningún requisito funcional nuevo.
+- Q: Cuando un rol sin autorización intenta ejecutar una de las 4 acciones administrativas de BW
+  (FR-BW-005 a FR-BW-008), ¿cómo debe reaccionar el sistema? → A: La interfaz oculta la acción para
+  cualquier rol distinto de "Administrador de la operación".
 
 ## User Scenarios & Testing *(mandatory)*
 
@@ -248,11 +268,20 @@ comportamiento ante error/fallo. No se inventó ninguna respuesta.
 
 - ¿Qué ocurre cuando falla el contrato de un webhook o API interno declarado (`FR-AC-009`,
   `FR-AC-010`, `FR-AC-037`…`FR-AC-044`, `FR-BA-001`…`FR-BA-008`, `FR-BA-016`…`FR-BA-021`,
-  `FR-BW-029`…`FR-BW-034`)? [NEEDS CLARIFICATION: esquema, contraparte y respuesta de error del contrato no declarados]
+  `FR-BW-029`…`FR-BW-034`)? Para la porción `FR-BW-029`…`FR-BW-034` (bundle Backend/Frontend Web):
+  **resuelto** (Clarifications, Sesión 2026-08-08) — BW reintenta automáticamente, ver el requisito
+  correspondiente. Para las porciones `FR-AC-*`/`FR-BA-*` (fuera del alcance de esta sesión de
+  clarify, restringida a BW por `bundle-scope.md`): [NEEDS CLARIFICATION: esquema, contraparte y
+  respuesta de error del contrato no declarados]
 - ¿Qué ocurre cuando falla una integración de frontera (`INT-1`…`INT-5`, `FR-SCC-001`…`FR-SCC-012`)?
   [NEEDS CLARIFICATION: contrato, esquema y comportamiento de error no declarados]
 - ¿Qué ocurre cuando una tarea programada (`FR-AC-047`…`FR-AC-050`, `FR-BA-034`…`FR-BA-037`,
-  `FR-BW-044`) no se ejecuta en su ventana o falla a mitad de ejecución? [NEEDS CLARIFICATION: periodicidad, ventana de ejecución y comportamiento ante fallo no declarados]
+  `FR-BW-044`) no se ejecuta en su ventana o falla a mitad de ejecución? Para `FR-BW-044` (bundle
+  Backend/Frontend Web; no es en realidad una tarea programada sino un handler dirigido por evento,
+  ver Clarifications Sesión 2026-08-05): **resuelto** (Clarifications, Sesión 2026-08-08) — BW
+  reintenta y resincroniza por reconsulta, ver el requisito correspondiente. Para `FR-AC-*`/`FR-BA-*`
+  (fuera del alcance de esta sesión de clarify, restringida a BW por `bundle-scope.md`): [NEEDS
+  CLARIFICATION: periodicidad, ventana de ejecución y comportamiento ante fallo no declarados]
 - ¿Qué pasa si el sistema debe operar fuera del entorno "Production" (prueba, integración,
   preproducción)? [NEEDS CLARIFICATION: entornos de prueba, integración o preproducción no declarados — `NFR-OP-1`]
 
@@ -650,18 +679,26 @@ comportamiento ante error/fallo. No se inventó ninguna respuesta.
   ← Functional / UI-processing inputs "Crear/Modificar profesional"
   Escenario: Dado que el bundle "Backend/Frontend Web" está disponible, cuando ocurre el disparador declarado, entonces el sistema completa "Crear/Modificar profesional" y deja un resultado observable.
   Aclarado (Clarifications, Sesión 2026-08-05): solo el rol "Administrador de la operación" puede ejecutar esta acción.
+  Aclarado (Clarifications, Sesión 2026-08-08): para cualquier otro rol, la interfaz oculta esta
+  acción (no se muestra la opción, en vez de mostrarla y rechazarla).
 - **FR-BW-006**: El sistema DEBE aceptar la interacción humana "Crear/Modificar Servicios".
   ← Functional / UI-processing inputs "Crear/Modificar Servicios"
   Escenario: Dado que el bundle "Backend/Frontend Web" está disponible, cuando ocurre el disparador declarado, entonces el sistema completa "Crear/Modificar Servicios" y deja un resultado observable.
   Aclarado (Clarifications, Sesión 2026-08-05): solo el rol "Administrador de la operación" puede ejecutar esta acción.
+  Aclarado (Clarifications, Sesión 2026-08-08): para cualquier otro rol, la interfaz oculta esta
+  acción (no se muestra la opción, en vez de mostrarla y rechazarla).
 - **FR-BW-007**: El sistema DEBE aceptar la interacción humana "Modificar Agenda".
   ← Functional / UI-processing inputs "Modificar Agenda"
   Escenario: Dado que el bundle "Backend/Frontend Web" está disponible, cuando ocurre el disparador declarado, entonces el sistema completa "Modificar Agenda" y deja un resultado observable.
   Aclarado (Clarifications, Sesión 2026-08-05): solo el rol "Administrador de la operación" puede ejecutar esta acción.
+  Aclarado (Clarifications, Sesión 2026-08-08): para cualquier otro rol, la interfaz oculta esta
+  acción (no se muestra la opción, en vez de mostrarla y rechazarla).
 - **FR-BW-008**: El sistema DEBE aceptar la interacción humana "Modificar datos Clientes".
   ← Functional / UI-processing inputs "Modificar datos Clientes"
   Escenario: Dado que el bundle "Backend/Frontend Web" está disponible, cuando ocurre el disparador declarado, entonces el sistema completa "Modificar datos Clientes" y deja un resultado observable.
   Aclarado (Clarifications, Sesión 2026-08-05): solo el rol "Administrador de la operación" puede ejecutar esta acción.
+  Aclarado (Clarifications, Sesión 2026-08-08): para cualquier otro rol, la interfaz oculta esta
+  acción (no se muestra la opción, en vez de mostrarla y rechazarla).
 - **FR-BW-009**: El sistema DEBE leer el dato importado "Disponibilidad Agenda".
   ← Functional / Data imports "Disponibilidad Agenda"
   Escenario: Dado que el bundle "Backend/Frontend Web" está disponible, cuando ocurre el disparador declarado, entonces el sistema completa "Disponibilidad Agenda" y deja un resultado observable.
@@ -725,27 +762,45 @@ comportamiento ante error/fallo. No se inventó ninguna respuesta.
 - **FR-BW-029**: El sistema DEBE emitir la respuesta de contrato "Disponibilidad Query API".
   ← Functional / API outputs "Disponibilidad Query API"
   Escenario: Dado que el bundle "Backend/Frontend Web" está disponible, cuando ocurre el disparador declarado, entonces el sistema completa "Disponibilidad Query API" y deja un resultado observable.
-  Aclarado (Clarifications, Sesión 2026-08-05): contrato interno compartido con los bundles Agente Conversacional (FR-AC-037) y Backend Agendamiento (FR-BA-001/FR-BA-016). El esquema técnico y el formato de respuesta de error se definen en `/speckit.plan`.
+  Aclarado (Clarifications, Sesión 2026-08-05): contrato interno compartido con los bundles Agente Conversacional (FR-AC-037) y Backend Agendamiento (FR-BA-001/FR-BA-016). El esquema técnico y el formato de respuesta de error se definen en `/speckit.plan`. Aclarado
+  (Clarifications, Sesión 2026-08-08): ante indisponibilidad o error del contrato, Backend/Frontend
+  Web reintenta automáticamente la llamada (número de reintentos y backoff se definen en
+  `/speckit.plan`).
 - **FR-BW-030**: El sistema DEBE emitir la respuesta de contrato "Servicios Query API".
   ← Functional / API outputs "Servicios Query API"
   Escenario: Dado que el bundle "Backend/Frontend Web" está disponible, cuando ocurre el disparador declarado, entonces el sistema completa "Servicios Query API" y deja un resultado observable.
-  Aclarado (Clarifications, Sesión 2026-08-05): contrato interno compartido con los bundles Agente Conversacional (FR-AC-038) y Backend Agendamiento (FR-BA-002/FR-BA-017). El esquema técnico y el formato de respuesta de error se definen en `/speckit.plan`.
+  Aclarado (Clarifications, Sesión 2026-08-05): contrato interno compartido con los bundles Agente Conversacional (FR-AC-038) y Backend Agendamiento (FR-BA-002/FR-BA-017). El esquema técnico y el formato de respuesta de error se definen en `/speckit.plan`. Aclarado
+  (Clarifications, Sesión 2026-08-08): ante indisponibilidad o error del contrato, Backend/Frontend
+  Web reintenta automáticamente la llamada (número de reintentos y backoff se definen en
+  `/speckit.plan`).
 - **FR-BW-031**: El sistema DEBE emitir la respuesta de contrato "Profesionale s Query API".
   ← Functional / API outputs "Profesionale s Query API"
   Escenario: Dado que el bundle "Backend/Frontend Web" está disponible, cuando ocurre el disparador declarado, entonces el sistema completa "Profesionale s Query API" y deja un resultado observable.
-  Aclarado (Clarifications, Sesión 2026-08-05): contrato interno compartido con los bundles Agente Conversacional (FR-AC-039) y Backend Agendamiento (FR-BA-003/FR-BA-018). El esquema técnico y el formato de respuesta de error se definen en `/speckit.plan`.
+  Aclarado (Clarifications, Sesión 2026-08-05): contrato interno compartido con los bundles Agente Conversacional (FR-AC-039) y Backend Agendamiento (FR-BA-003/FR-BA-018). El esquema técnico y el formato de respuesta de error se definen en `/speckit.plan`. Aclarado
+  (Clarifications, Sesión 2026-08-08): ante indisponibilidad o error del contrato, Backend/Frontend
+  Web reintenta automáticamente la llamada (número de reintentos y backoff se definen en
+  `/speckit.plan`).
 - **FR-BW-032**: El sistema DEBE emitir la respuesta de contrato "Crear Reserva Command API".
   ← Functional / API outputs "Crear Reserva Command API"
   Escenario: Dado que el bundle "Backend/Frontend Web" está disponible, cuando ocurre el disparador declarado, entonces el sistema completa "Crear Reserva Command API" y deja un resultado observable.
-  Aclarado (Clarifications, Sesión 2026-08-05): contrato interno compartido con los bundles Agente Conversacional (FR-AC-041) y Backend Agendamiento (FR-BA-005/FR-BA-019). El esquema técnico y el formato de respuesta de error se definen en `/speckit.plan`.
+  Aclarado (Clarifications, Sesión 2026-08-05): contrato interno compartido con los bundles Agente Conversacional (FR-AC-041) y Backend Agendamiento (FR-BA-005/FR-BA-019). El esquema técnico y el formato de respuesta de error se definen en `/speckit.plan`. Aclarado
+  (Clarifications, Sesión 2026-08-08): ante indisponibilidad o error del contrato, Backend/Frontend
+  Web reintenta automáticamente la llamada (número de reintentos y backoff se definen en
+  `/speckit.plan`).
 - **FR-BW-033**: El sistema DEBE emitir la respuesta de contrato "Actualizar Reserva Command API".
   ← Functional / API outputs "Actualizar Reserva Command API"
   Escenario: Dado que el bundle "Backend/Frontend Web" está disponible, cuando ocurre el disparador declarado, entonces el sistema completa "Actualizar Reserva Command API" y deja un resultado observable.
-  Aclarado (Clarifications, Sesión 2026-08-05): contrato interno compartido con los bundles Agente Conversacional (FR-AC-042) y Backend Agendamiento (FR-BA-006/FR-BA-020). El esquema técnico y el formato de respuesta de error se definen en `/speckit.plan`.
+  Aclarado (Clarifications, Sesión 2026-08-05): contrato interno compartido con los bundles Agente Conversacional (FR-AC-042) y Backend Agendamiento (FR-BA-006/FR-BA-020). El esquema técnico y el formato de respuesta de error se definen en `/speckit.plan`. Aclarado
+  (Clarifications, Sesión 2026-08-08): ante indisponibilidad o error del contrato, Backend/Frontend
+  Web reintenta automáticamente la llamada (número de reintentos y backoff se definen en
+  `/speckit.plan`).
 - **FR-BW-034**: El sistema DEBE emitir la respuesta de contrato "Cancelar Reserva Command API".
   ← Functional / API outputs "Cancelar Reserva Command API"
   Escenario: Dado que el bundle "Backend/Frontend Web" está disponible, cuando ocurre el disparador declarado, entonces el sistema completa "Cancelar Reserva Command API" y deja un resultado observable.
-  Aclarado (Clarifications, Sesión 2026-08-05): contrato interno compartido con los bundles Agente Conversacional (FR-AC-043) y Backend Agendamiento (FR-BA-007/FR-BA-021). El esquema técnico y el formato de respuesta de error se definen en `/speckit.plan`.
+  Aclarado (Clarifications, Sesión 2026-08-05): contrato interno compartido con los bundles Agente Conversacional (FR-AC-043) y Backend Agendamiento (FR-BA-007/FR-BA-021). El esquema técnico y el formato de respuesta de error se definen en `/speckit.plan`. Aclarado
+  (Clarifications, Sesión 2026-08-08): ante indisponibilidad o error del contrato, Backend/Frontend
+  Web reintenta automáticamente la llamada (número de reintentos y backoff se definen en
+  `/speckit.plan`).
 - **FR-BW-035**: El sistema DEBE persistir o entregar el dato exportado "Disponibilidad Agenda".
   ← Functional / Data exports "Disponibilidad Agenda"
   Escenario: Dado que el bundle "Backend/Frontend Web" está disponible, cuando ocurre el disparador declarado, entonces el sistema completa "Disponibilidad Agenda" y deja un resultado observable.
@@ -777,7 +832,9 @@ comportamiento ante error/fallo. No se inventó ninguna respuesta.
   ← Functional / Jobs "Actualizacion de agenda proveniente de Backend Agendamiento"
   Escenario: Dado que el bundle "Backend/Frontend Web" está disponible, cuando "Backend Agendamiento" emite un evento de cambio de agenda, entonces el sistema lo aplica de inmediato y deja un resultado observable.
   Aclarado (Clarifications, Sesión 2026-08-05): actualización dirigida por evento en tiempo real, no por sondeo periódico ni proceso batch.
-  [NEEDS CLARIFICATION: comportamiento ante fallo (reintentos, orden de eventos, eventos perdidos) no declarado]
+  Aclarado (Clarifications, Sesión 2026-08-08): ante fallo, pérdida o desorden del evento, BW
+  reintenta procesarlo y, si el evento se pierde definitivamente o llega fuera de orden, se
+  resincroniza reconsultando el estado completo mediante la Disponibilidad Query API (FR-BW-029).
 
 ### Integraciones de frontera
 
@@ -871,7 +928,10 @@ comportamiento ante error/fallo. No se inventó ninguna respuesta.
 - **Historial Conversación**: atributos por confirmar. [NEEDS CLARIFICATION: atributos no declarados]
 - **Reglas de negocio**: atributos por confirmar. [NEEDS CLARIFICATION: atributos no declarados]
 - **Configuración conversacional**: atributos por confirmar. [NEEDS CLARIFICATION: atributos no declarados]
-- **Multimedia Web**: atributos por confirmar. [NEEDS CLARIFICATION: atributos no declarados]
+- **Multimedia Web**: atributos por confirmar. Aclarado (Clarifications, Sesión 2026-08-08, bundle
+  BW): la gestión (carga, consulta, eliminación) de esta entidad queda explícitamente fuera de
+  alcance de esta iteración de BW; la entidad permanece declarada para uso futuro, sin requisito
+  funcional propio por ahora. [NEEDS CLARIFICATION: atributos no declarados]
 
 ## Success Criteria *(mandatory)*
 

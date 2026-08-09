@@ -21,7 +21,7 @@ porque la resolución deja un ángulo distinto todavía sin especificar (ver ref
 
 - [ ] CHK001 - ¿Se especifica cuáles de las 12 restricciones (R-1 a R-12) aplican específicamente al bundle Backend/Frontend Web, en vez de asumir que todas aplican por igual a todo el sistema? [Completeness, Gap, Spec §Restricciones]
 - [ ] CHK002 - ¿Se especifica cuáles de los requisitos no funcionales (NFR-TEC-1..6, NFR-OP-1..3) aplican al bundle Backend/Frontend Web específicamente, o si tiene umbrales propios distintos a los del resto del sistema? [Completeness, Gap, Spec §Non-Functional Requirements]
-- [ ] CHK003 - ¿Existen requisitos funcionales para la entidad "Multimedia Web" (declarada como objeto de datos propio de BW) más allá de su mención en Key Entities — por ejemplo, carga, límites de almacenamiento o recuperación? [Completeness, Gap, Spec §Key Entities]
+- [x] CHK003 - ¿Existen requisitos funcionales para la entidad "Multimedia Web" (declarada como objeto de datos propio de BW) más allá de su mención en Key Entities — por ejemplo, carga, límites de almacenamiento o recuperación? [Completeness, Gap, Spec §Key Entities] — Resuelto (Clarifications, Sesión 2026-08-08): decisión explícita de dejarlo fuera de alcance de esta iteración, no un vacío sin examinar.
 - [ ] CHK004 - ¿Se define algún requisito sobre qué datos compone el "Dashboard resumen" (FR-BW-022)? [Completeness, Gap, Spec §FR-BW-022]
 
 ## Requirement Clarity
@@ -31,7 +31,7 @@ porque la resolución deja un ángulo distinto todavía sin especificar (ver ref
 
 ## Requirement Consistency
 
-- [ ] CHK007 - ¿Está explícita la relación entre los "Actores organizacionales" de §Contexto (Cliente, Profesionales del Centro, Administrador del centro, Recepcionista) y los "perfiles"/roles de §Perfiles de Usuario y Permisos (Administrador de la operación, Coordinador de agenda, Prestador del servicio, Solicitante de reserva), de modo que quede claro qué actor organizacional ejerce el rol "Administrador de la operación" ahora autorizado para FR-BW-005 a FR-BW-008? [Consistency, Ambiguity, Spec §Contexto vs §Perfiles de Usuario y Permisos]
+- [x] CHK007 - ¿Está explícita la relación entre los "Actores organizacionales" de §Contexto (Cliente, Profesionales del Centro, Administrador del centro, Recepcionista) y los "perfiles"/roles de §Perfiles de Usuario y Permisos (Administrador de la operación, Coordinador de agenda, Prestador del servicio, Solicitante de reserva), de modo que quede claro qué actor organizacional ejerce el rol "Administrador de la operación" ahora autorizado para FR-BW-005 a FR-BW-008? [Consistency, Ambiguity, Spec §Contexto vs §Perfiles de Usuario y Permisos] — Resuelto (Clarifications, Sesión 2026-08-08): "Administrador del centro".
 - [ ] CHK008 - ¿Especifican los "Helpers" que BW comparte de nombre con otro bundle (FR-BW-020 "Selección de horarios" y FR-BW-021 "Validación de reservas", también presentes como FR-BA-014/FR-BA-015) si BW ejecuta su propia lógica o invoca la misma implementación compartida ya aclarada para los contratos de API en FR-BW-029 a FR-BW-034? [Consistency, Ambiguity, Spec §FR-BW-020, §FR-BW-021, §Clarifications]
 - [ ] CHK009 - Ahora que FR-BW-029 a FR-BW-034 quedaron aclarados como un contrato de API interna compartido, ¿especifica la sección de Edge Cases sobre falla de contrato interno si el manejo de error es centralizado en la implementación compartida o debe replicarse en cada bundle consumidor, incluyendo BW? [Consistency, Gap, Spec §Edge Cases vs §Clarifications]
 - [ ] CHK010 - ¿Son consistentes en el dato o disparador que esperan los tres requisitos de BW que reaccionan a eventos conversacionales originados en otro bundle (FR-BW-016 "Mensaje recibido", FR-BW-017 "Estado de mensaje recibido", FR-BW-018 "Error de interpretacion (derivar)"), dado que los mismos nombres de evento también son requisitos del bundle Agente Conversacional? [Consistency, Dependency, Spec §FR-BW-016..018]
@@ -43,13 +43,13 @@ porque la resolución deja un ángulo distinto todavía sin especificar (ver ref
 
 ## Scenario Coverage
 
-- [ ] CHK013 - ¿Se especifican flujos negativos/de excepción para las 4 acciones de BW restringidas a "Administrador de la operación" (FR-BW-005 a FR-BW-008) — por ejemplo, qué ocurre si un rol no autorizado intenta ejecutarlas? [Coverage, Gap, Spec §FR-BW-005..008]
+- [x] CHK013 - ¿Se especifican flujos negativos/de excepción para las 4 acciones de BW restringidas a "Administrador de la operación" (FR-BW-005 a FR-BW-008) — por ejemplo, qué ocurre si un rol no autorizado intenta ejecutarlas? [Coverage, Gap, Spec §FR-BW-005..008] — Resuelto (Clarifications, Sesión 2026-08-08): la interfaz oculta la acción para cualquier otro rol.
 - [ ] CHK014 - ¿Existe un requisito sobre qué debe mostrar o hacer Backend/Frontend Web cuando los datos de "Disponibilidad Agenda", "Ficha clientes", "Catálogo de servicios" o "Profesionales y especialidades" están vacíos o aún no disponibles (estado cero)? [Coverage, Edge Case, Gap, Spec §FR-BW-009..012]
 
 ## Edge Case Coverage
 
-- [ ] CHK015 - ¿Se aborda en algún lugar de la especificación el "comportamiento ante fallo" de FR-BW-044 (reintentos, orden de eventos, eventos perdidos), más allá de quedar señalado como no resuelto? [Edge Case, Gap, Spec §FR-BW-044]
-- [ ] CHK016 - ¿Existe un requisito sobre qué debe hacer Backend/Frontend Web cuando los contratos de API interna compartidos (FR-BW-029 a FR-BW-034) no están disponibles o devuelven error, dado que el esquema y el formato de error quedaron explícitamente diferidos a `/speckit.plan`? [Edge Case, Gap, Spec §FR-BW-029..034]
+- [x] CHK015 - ¿Se aborda en algún lugar de la especificación el "comportamiento ante fallo" de FR-BW-044 (reintentos, orden de eventos, eventos perdidos), más allá de quedar señalado como no resuelto? [Edge Case, Gap, Spec §FR-BW-044] — Resuelto (Clarifications, Sesión 2026-08-08): reintento y resincronización por reconsulta.
+- [x] CHK016 - ¿Existe un requisito sobre qué debe hacer Backend/Frontend Web cuando los contratos de API interna compartidos (FR-BW-029 a FR-BW-034) no están disponibles o devuelven error, dado que el esquema y el formato de error quedaron explícitamente diferidos a `/speckit.plan`? [Edge Case, Gap, Spec §FR-BW-029..034] — Resuelto (Clarifications, Sesión 2026-08-08): reintento automático.
 
 ## Non-Functional Requirements
 
@@ -68,6 +68,13 @@ porque la resolución deja un ángulo distinto todavía sin especificar (ver ref
 
 ## Notes
 
+- **Sesión 2026-08-08**: sesión adicional de `/speckit.clarify` (bundle BW) resolvió CHK003, CHK007,
+  CHK013, CHK015 y CHK016 — ver `## Clarifications` en `spec.md`, Sesión 2026-08-08. CHK018,
+  CHK019 y CHK022 quedan pendientes: la resolución de FR-BW-044 cubre el mecanismo de
+  reintento/resincronización pero no qué ve el Administrador durante la ventana de propagación
+  (CHK018), ni valida explícitamente el supuesto de que Backend Agendamiento siempre emite el
+  evento (CHK019); CHK022 (conflicto de acceso de los 3 roles excluidos) no fue parte de esta
+  sesión.
 - Check items off as completed: `[x]`
 - Este checklist valida la ESCRITURA de los requisitos de BW (completitud/claridad/consistencia/medibilidad/cobertura), no el comportamiento del sistema ni la implementación.
 - No se generaron ítems sobre funcionalidad exclusiva de Agente Conversacional (AC) o Backend Agendamiento (BA), salvo donde un requisito de BW los referencia explícitamente (FR-BW-016..018, FR-BW-020..021, FR-BW-029..034, FR-BW-044).

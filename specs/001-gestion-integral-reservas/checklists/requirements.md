@@ -43,3 +43,12 @@
   alcance de esta sesión) más algunos residuos dentro de BW (comportamiento ante fallo de
   FR-BW-044, permisos de los otros 3 roles fuera de BW) siguen pendientes. Cuando se ejecuten
   sesiones de clarify equivalentes para AC y BA, este checklist deberá revalidarse de nuevo.
+- **Etapa G, sesión adicional (2026-08-08)**: nueva sesión de `/speckit.clarify` restringida al
+  bundle BW resolvió 5 ambigüedades adicionales (actor que ejerce "Administrador de la operación";
+  comportamiento ante fallo del contrato compartido FR-BW-029..034; comportamiento ante fallo del
+  evento de FR-BW-044; alcance de "Multimedia Web" fuera de esta iteración; ocultar en UI las
+  acciones administrativas para roles no autorizados) — ver `## Clarifications` en `spec.md`,
+  Sesión 2026-08-08, y `checklists/bw-requirements.md` (CHK003, CHK007, CHK013, CHK015, CHK016).
+  Ninguna casilla de este checklist de nivel de feature cambió de estado: siguen pendientes los
+  `[NEEDS CLARIFICATION]` de los bundles AC/BA (fuera de alcance de BW) y las métricas de
+  `CE-1`…`CE-7`, que ninguna de las 5 preguntas de esta sesión tocó.
