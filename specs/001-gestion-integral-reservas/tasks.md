@@ -202,7 +202,7 @@ esta ejecución — ver "Nota de alcance: backend sin frontend").
   persiste la fila en PostgreSQL usando la sesión de T004/T010) en
   `bw-backend/src/services/profesional_service.py` (depende de T004, T008, T012, T013) — Commit:
   `"feat(bw-backend): implement crear profesional service (US1)"`
-- [ ] T015 [US1] [AC:FR-BW-005] Implementar el endpoint `POST /profesionales` en
+- [X] T015 [US1] [AC:FR-BW-005] Implementar el endpoint `POST /profesionales` en
   `bw-backend/src/api/profesionales.py` (depende de T009, T014; mismo archivo que T009 →
   secuencial) — Commit: `"feat(bw-backend): add POST /profesionales endpoint (US1)"`
 
