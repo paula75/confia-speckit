@@ -182,11 +182,11 @@ esta ejecución — ver "Nota de alcance: backend sin frontend").
 
 ### Tests for User Story 1
 
-- [ ] T011 [P] [US1] [AC:FR-BW-003] Unit test: el schema Pydantic de "Datos de profesionales" rechaza
+- [X] T011 [P] [US1] [AC:FR-BW-003] Unit test: el schema Pydantic de "Datos de profesionales" rechaza
   payloads sin `nombre` y acepta uno válido, en `bw-backend/tests/unit/test_profesional_schema.py`
   (no requiere el fixture de T010 — no toca la base de datos) — Commit:
   `"test(bw-backend): add schema validation tests for crear profesional (US1)"`
-- [ ] T012 [P] [US1] [AC:FR-BW-005] Unit test: `ProfesionalService.crear()` persiste el registro en
+- [X] T012 [P] [US1] [AC:FR-BW-005] Unit test: `ProfesionalService.crear()` persiste el registro en
   PostgreSQL solo cuando el rol es "Administrador de la operación" y lo rechaza para cualquier otro
   rol, en `bw-backend/tests/unit/test_profesional_create_service.py` (usa el fixture de sesión
   aislada de T010) — Commit:
