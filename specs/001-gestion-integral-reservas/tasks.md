@@ -277,7 +277,7 @@ US-002 primero.
   T013, actualiza la fila en PostgreSQL vía la sesión de T004) en
   `bw-backend/src/services/profesional_service.py` (depende de T008, T013, T020; mismo archivo que
   T014/T017 → secuencial) — Commit: `"feat(bw-backend): implement modificar profesional service (US3)"`
-- [ ] T022 [US3] [AC:FR-BW-005] Implementar el endpoint `PUT /profesionales/{id}` en
+- [X] T022 [US3] [AC:FR-BW-005] Implementar el endpoint `PUT /profesionales/{id}` en
   `bw-backend/src/api/profesionales.py` (depende de T019, T021; mismo archivo que T015/T018/T019 →
   secuencial) — Commit: `"feat(bw-backend): add PUT /profesionales/{id} endpoint (US3)"`
 

@@ -73,3 +73,20 @@ def obtener_profesional(profesional_id: uuid.UUID, db: Session = Depends(get_db)
         if profesional.id == profesional_id:
             return profesional
     raise HTTPException(status_code=404, detail="Profesional no encontrado")
+
+
+@router.put("/{profesional_id}", response_model=Profesional)
+def modificar_profesional(
+    profesional_id: uuid.UUID,
+    input_: ProfesionalCreateInput,
+    x_rol: str = Header(..., alias="X-Rol"),
+    db: Session = Depends(get_db),
+) -> Profesional:
+    """FR-BW-005 "Crear/Modificar profesional" (variante modificar)."""
+    service = ProfesionalService(db)
+    try:
+        return service.modificar(profesional_id, input_, rol=_resolver_rol(x_rol))
+    except RolNoAutorizadoError as exc:
+        raise HTTPException(status_code=403, detail=str(exc)) from exc
+    except ValueError as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
