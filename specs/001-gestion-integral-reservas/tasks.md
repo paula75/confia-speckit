@@ -112,7 +112,7 @@ instrucción explícita de `prompts/etapa-j-tasks.md`).
   no vacío una vez completada la implementación) y crear el esqueleto de
   `specs/001-gestion-integral-reservas/traceability.md` (tabla con columnas Tnnn | AC-ID(s) | Ruta |
   SHA — SHA vacío hasta T029) — Commit: `"chore(tasks): add traceability verifier and skeleton for Gestión de profesionales (backend)"`
-- [ ] T002 Inicializar `bw-backend` (FastAPI): estructura `src/{models,services,adapters,api,db}/`,
+- [X] T002 Inicializar `bw-backend` (FastAPI): estructura `src/{models,services,adapters,api,db}/`,
   `tests/unit/`, `requirements.txt`/`pyproject.toml`, configuración de lint/format (ruff + black), y
   entrypoint `bw-backend/src/main.py` (depende de T001, por instrucción explícita de esta ejecución
   de completar primero el verificador de trazabilidad) — Commit: `"chore(bw-backend): scaffold FastAPI project structure"`
