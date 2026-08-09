@@ -323,7 +323,7 @@ independiente.
 - [X] T026 [P] Ejecutar `pytest bw-backend/tests/unit/` (cada test usa el fixture de sesión aislada
   de T010) y corregir cualquier falla antes de continuar — Commit:
   `"test(bw-backend): green unit suite for Gestión de profesionales"`
-- [ ] T027 Levantar `docker compose up` (`bw-backend` + PostgreSQL) y ejecutar manualmente el
+- [X] T027 Levantar `docker compose up` (`bw-backend` + PostgreSQL) y ejecutar manualmente el
   Escenario 1 de `quickstart.md` ("Crear/modificar un profesional", FR-BW-005) invocando
   `bw-backend` directamente (p. ej. `httpx`/`TestClient` de FastAPI o `curl`, sin `bw-frontend` por
   estar excluido de esta ejecución), y registrar el resultado en
