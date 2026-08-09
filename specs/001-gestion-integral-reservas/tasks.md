@@ -145,7 +145,7 @@ autorización, router base) que las 4 historias de "Gestión de profesionales" n
   `bw-backend/alembic/versions/`, y aplicarla contra el PostgreSQL de `docker-compose.yml`
   (`alembic upgrade head`), verificando que la tabla `profesionales` existe (depende de T003, T005,
   T006) — Commit: `"chore(bw-backend): add and apply initial alembic migration for profesionales table"`
-- [ ] T008 [P] Implementar el control de autorización que restringe crear/modificar profesional al
+- [X] T008 [P] Implementar el control de autorización que restringe crear/modificar profesional al
   rol "Administrador de la operación" (actor organizacional "Administrador del centro" — aclarado en
   Clarifications, Sesión 2026-08-08) en `bw-backend/src/services/auth.py` (depende de T002) —
   Commit: `"feat(bw-backend): add role authorization guard for Administrador de la operación"`
