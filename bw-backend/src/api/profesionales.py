@@ -14,6 +14,8 @@ envía tal cual en un header. Por eso el header usa un código ASCII-safe
 `services/auth.ROL_AUTORIZADO` — el nombre del rol en `spec.md` no cambia, solo
 su representación en tránsito HTTP.
 """
+import uuid
+
 from fastapi import APIRouter, Depends, Header, HTTPException
 from sqlalchemy.orm import Session
 
@@ -56,3 +58,18 @@ def profesionales_query_api(db: Session = Depends(get_db)) -> list[Profesional]:
     restricción de rol: es un contrato interno entre bundles, no una acción
     administrativa humana (distinto de FR-BW-005)."""
     return ProfesionalService(db).listar()
+
+
+@router.get("", response_model=list[Profesional])
+def listar_profesionales(db: Session = Depends(get_db)) -> list[Profesional]:
+    """FR-BW-025 "Mostrar o notificar Ficha Profesionales" (listado administrativo)."""
+    return ProfesionalService(db).listar()
+
+
+@router.get("/{profesional_id}", response_model=Profesional)
+def obtener_profesional(profesional_id: uuid.UUID, db: Session = Depends(get_db)) -> Profesional:
+    """FR-BW-025 "Mostrar o notificar Ficha Profesionales" (ficha individual)."""
+    for profesional in ProfesionalService(db).listar():
+        if profesional.id == profesional_id:
+            return profesional
+    raise HTTPException(status_code=404, detail="Profesional no encontrado")

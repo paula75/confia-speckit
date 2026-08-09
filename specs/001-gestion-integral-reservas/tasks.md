@@ -242,7 +242,7 @@ y la ficha esperados, sin depender de que US-001 se haya ejecutado antes.
   (`contracts/bw-shared-internal-api.md` §Parte 1, contrato consumible por otros bundles) en
   `bw-backend/src/api/profesionales.py` (depende de T009, T017; mismo archivo que T015 →
   secuencial) — Commit: `"feat(bw-backend): serve GET /profesionales/query per shared contract (US2)"`
-- [ ] T019 [US2] [AC:FR-BW-025] Implementar los endpoints administrativos `GET /profesionales`
+- [X] T019 [US2] [AC:FR-BW-025] Implementar los endpoints administrativos `GET /profesionales`
   (lista) y `GET /profesionales/{id}` (ficha) en `bw-backend/src/api/profesionales.py` (depende de
   T018; mismo archivo → secuencial) — Commit: `"feat(bw-backend): add GET /profesionales admin endpoints (US2)"`
 
