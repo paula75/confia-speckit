@@ -130,7 +130,7 @@ autorización, router base) que las 4 historias de "Gestión de profesionales" n
 
 **⚠️ CRITICAL**: ninguna historia de usuario puede comenzar hasta completar esta fase.
 
-- [ ] T004 Configurar la conexión a PostgreSQL: engine y sesión de SQLAlchemy en
+- [X] T004 Configurar la conexión a PostgreSQL: engine y sesión de SQLAlchemy en
   `bw-backend/src/db/session.py` y la clase `Base` declarativa en `bw-backend/src/db/base.py`
   (`research.md` §"Motor de base de datos y herramientas de acceso a datos") (depende de T002, T003) —
   Commit: `"feat(bw-backend): add SQLAlchemy engine, session and declarative base"`
