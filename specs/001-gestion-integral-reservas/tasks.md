@@ -149,7 +149,7 @@ autorización, router base) que las 4 historias de "Gestión de profesionales" n
   rol "Administrador de la operación" (actor organizacional "Administrador del centro" — aclarado en
   Clarifications, Sesión 2026-08-08) en `bw-backend/src/services/auth.py` (depende de T002) —
   Commit: `"feat(bw-backend): add role authorization guard for Administrador de la operación"`
-- [ ] T009 [P] Registrar el router base `profesionales` (sin endpoints aún) en
+- [X] T009 [P] Registrar el router base `profesionales` (sin endpoints aún) en
   `bw-backend/src/api/profesionales.py` y montarlo en `bw-backend/src/main.py` (depende de T002) —
   Commit: `"chore(bw-backend): register profesionales router skeleton"`
 - [ ] T010 Implementar el fixture de pytest de sesión aislada de base de datos en
