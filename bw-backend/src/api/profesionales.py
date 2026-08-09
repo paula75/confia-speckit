@@ -47,3 +47,12 @@ def crear_profesional(
         return service.crear(input_, rol=_resolver_rol(x_rol))
     except RolNoAutorizadoError as exc:
         raise HTTPException(status_code=403, detail=str(exc)) from exc
+
+
+@router.get("/query", response_model=list[Profesional])
+def profesionales_query_api(db: Session = Depends(get_db)) -> list[Profesional]:
+    """FR-BW-031 "Profesionales Query API" — servida por BW, respaldada por su
+    propio PostgreSQL (ver contracts/bw-shared-internal-api.md §Parte 1). Sin
+    restricción de rol: es un contrato interno entre bundles, no una acción
+    administrativa humana (distinto de FR-BW-005)."""
+    return ProfesionalService(db).listar()

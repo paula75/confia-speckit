@@ -238,7 +238,7 @@ y la ficha esperados, sin depender de que US-001 se haya ejecutado antes.
   `contracts/bw-shared-internal-api.md` §Parte 1) en `bw-backend/src/services/profesional_service.py`
   (depende de T004, T016; mismo archivo que T014 → secuencial) — Commit:
   `"feat(bw-backend): implement listar profesionales from postgres (US2)"`
-- [ ] T018 [US2] [AC:FR-BW-031] Implementar el endpoint servido `GET /profesionales/query`
+- [X] T018 [US2] [AC:FR-BW-031] Implementar el endpoint servido `GET /profesionales/query`
   (`contracts/bw-shared-internal-api.md` §Parte 1, contrato consumible por otros bundles) en
   `bw-backend/src/api/profesionales.py` (depende de T009, T017; mismo archivo que T015 →
   secuencial) — Commit: `"feat(bw-backend): serve GET /profesionales/query per shared contract (US2)"`
