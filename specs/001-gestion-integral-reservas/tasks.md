@@ -320,7 +320,7 @@ independiente.
 
 ## Phase 7: Validación final
 
-- [ ] T026 [P] Ejecutar `pytest bw-backend/tests/unit/` (cada test usa el fixture de sesión aislada
+- [X] T026 [P] Ejecutar `pytest bw-backend/tests/unit/` (cada test usa el fixture de sesión aislada
   de T010) y corregir cualquier falla antes de continuar — Commit:
   `"test(bw-backend): green unit suite for Gestión de profesionales"`
 - [ ] T027 Levantar `docker compose up` (`bw-backend` + PostgreSQL) y ejecutar manualmente el
