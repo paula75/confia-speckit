@@ -31,12 +31,13 @@ En particular:
 - diseñar únicamente los contratos e interfaces necesarios para dicho bundle;
 - diseñar únicamente los requisitos no funcionales aplicables al bundle;
 - utilizar los demás bundles únicamente como dependencias arquitectónicas cuando exista una referencia explícita desde el bundle seleccionado.
+- diseñar unicamente el bundle de backend
 
 ## Stack
 - Backend usa python con el framework FastAPI
-- Se incluyen test unitarios en backend
-- Frontend usa React con typescript estricto
-
+- Se incluyen test unitarios en backend que usan una sesion aislada de DB
+- Base de datos postgresql a traves de una imagen de docker
+- Backend se dockeriza
 
 ## Restricciones
 

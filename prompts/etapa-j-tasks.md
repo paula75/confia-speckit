@@ -2,7 +2,8 @@ Genera tasks.md con estas reglas:
 
 # Alcance de la ejecucion
 - Utiliza como fuente de requisitos `specs/001-gestion-integral-reservas/spec.md` y `specs/001-gestion-integral-reservas/bundle-scope.md` y restinge el diseño exclusivamente al bundle seleccionado
-- Genera tareas únicamente para el feature de "Gestión de profesionales"
+- Genera tareas únicamente para el feature de "Gestión de profesionales" de backend
+- No incluyas el proyecto de frontend
 
 # Artefactos estperados
 - Formato oficial: - [ ] Tnnn [P?] [USn] descripción con ruta.
