@@ -299,7 +299,7 @@ el conjunto completo de datos de "Profesionales y especialidades".
 
 ### Tests for User Story 4
 
-- [ ] T023 [P] [US4] [AC:FR-BW-037] Unit test: `ProfesionalService.exportar()` serializa la lista
+- [X] T023 [P] [US4] [AC:FR-BW-037] Unit test: `ProfesionalService.exportar()` serializa la lista
   completa de profesionales leída de PostgreSQL, en
   `bw-backend/tests/unit/test_profesional_export_service.py` (usa el fixture de sesión aislada de
   T010) — Commit: `"test(bw-backend): add exportar profesionales tests (US4)"`
