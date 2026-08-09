@@ -194,7 +194,7 @@ esta ejecución — ver "Nota de alcance: backend sin frontend").
 
 ### Implementation for User Story 1
 
-- [ ] T013 [US1] [AC:FR-BW-003] Extender `bw-backend/src/models/profesional.py` con el schema de
+- [X] T013 [US1] [AC:FR-BW-003] Extender `bw-backend/src/models/profesional.py` con el schema de
   entrada `ProfesionalCreateInput` (campo requerido `nombre` — motivado por FR-BW-004/§data-model.md)
   (depende de T006, T011; mismo archivo que T006 → secuencial) — Commit:
   `"feat(bw-backend): add ProfesionalCreateInput schema (US1)"`

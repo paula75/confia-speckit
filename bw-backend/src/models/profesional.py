@@ -34,3 +34,15 @@ class Profesional(BaseModel):
     especialidades: list[str]
 
     model_config = {"from_attributes": True}
+
+
+class ProfesionalCreateInput(BaseModel):
+    """Schema Pydantic de entrada para "Datos de profesionales" (FR-BW-003/FR-BW-004).
+
+    Solo `nombre` está motivado por un FR-BW explícito (FR-BW-004 "Datos de
+    clientes"/"Datos de profesionales" — ver data-model.md). `especialidades` no
+    se incluye aquí: ningún FR-BW-005 describe que se reciba al crear; se asigna
+    mediante `ProfesionalService.modificar()` (US3) si se necesita más adelante.
+    """
+
+    nombre: str
