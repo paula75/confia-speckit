@@ -333,7 +333,7 @@ independiente.
   `specs/001-gestion-integral-reservas/scripts/verify_traceability.py` (T001) contra este archivo y
   confirmar que los 6 AC-IDs de la tabla "Coverage Audit" tienen ≥1 tarea asociada — Commit:
   `"chore(tasks): run coverage audit for Gestión de profesionales (backend)"`
-- [ ] T029 (FINAL) Registrar los SHA de commit reales de T001–T028 en
+- [X] T029 (FINAL) Registrar los SHA de commit reales de T001–T028 en
   `specs/001-gestion-integral-reservas/traceability.md` (una fila por tarea: Tnnn, AC-ID(s), ruta,
   SHA), usando `verify_traceability.py` — Commit:
   `"docs(specs): record real commit SHAs in traceability.md for Gestión de profesionales (backend)"`
