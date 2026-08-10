@@ -48,3 +48,13 @@ Spec.md marca 'permisos no declarados' para los 4 roles de negocio. Para las acc
   3. Type something.
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
   4. Chat about this
+
+¿Cómo debe persistir ProfesionalService.crear()/modificar() (US1/US3), dado que el contrato compartido documentado no tiene ninguna operación de escritura para Profesionales?
+
+❯ 1. Extender el adaptador (Recomendado)
+     Agregar POST /internal/profesionales y PUT /internal/profesionales/{id} al adaptador T006, replicando el patrón y formato de error de las 3 operaciones de Reserva ya documentadas. Se documenta como brecha de contrato llenada en esta etapa (mismo tratamiento que se le dio a bw-data-exports.md en /speckit.plan), no como invención de alcance de negocio.
+  2. Repositorio local en BW
+     ProfesionalService persiste en un almacén propio de BW (en memoria/local), separado de la Profesionales Query API que usa US2 para listar. Más simple de implementar, pero diverge de plan.md (que dice BW no tiene BD propia) y crea una inconsistencia: lo creado en US1 no aparecería al consultar vía la Query API compartida.
+  3. Detener el flujo de escritura
+     Implementar solo schema (T012) y autorización (T007, ya hecho); dejar la llamada real de persistencia en crear()/modificar() como no implementada (bloqueada), documentando la inconsistencia para resolverse en una futura sesión de /speckit.plan. US2 (Consultar) y US4 (Exportar), que sí son solo lectura, se completan con normalidad.
+  4. Type something.
